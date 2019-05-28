@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import {Button} from 'antd';
+// import {Button} from 'antd';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-
+import {Layout} from 'antd';
+import SerachRow from './views/searchRow'
 import OrderDetail from './views/orderDetail'
+import FooterRow from './views/footerRow'
 
+const {Header, Content, Footer} = Layout;
 class App extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="app">
                 {/* <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>
@@ -27,8 +30,16 @@ class App extends Component {
                     <Button type="primary">Button</Button>
                 </header> */}
                 <Router>
-                    <div>顶部</div>
-                    <Route path="/orderDetail" render={() => <OrderDetail/>}/>
+                    <Layout>
+                        <Header className="app-header">顶部</Header>
+                        <Content className="app-content">
+                            <SerachRow/>
+                            <div className="app-content-box">
+                                <Route path="/orderDetail" render={() => <OrderDetail/>}/>
+                            </div>
+                        </Content>
+                        <FooterRow/>
+                    </Layout>
                 </Router>
             </div>
         )
