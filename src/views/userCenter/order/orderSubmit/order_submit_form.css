@@ -1,0 +1,80 @@
+.form-button {
+    padding: 2px;
+    margin: -20px 0 20px 50px;
+    width: 81px;
+    height: 25px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #F40;
+}
+
+.form-button a {
+    color: #fff
+}
+
+.verify-row {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.goods-table .img {
+    width: 50px;
+    height: 50px;
+}
+
+.submit-box {
+    min-height: 132px;
+    margin: 0;
+    float: right;
+    border: 1px solid #F40;
+}
+
+.submit-box-border {
+    border: 3px solid #fff0e8;
+    padding: 10px 10px 10px 20px;
+    min-height: 130px;
+    min-width: 240px;
+}
+
+.submit-box .box-price-row {
+    text-align: right
+}
+
+.submit-box .box-title {
+    font-weight: 700;
+    color: #333;
+}
+
+.submit-box .box-icon {
+    font-size: 26px;
+    margin-right: 4px;
+    color: #999;
+}
+
+.submit-box .box-price {
+    color: #f40;
+    font: 700 26px tahoma;
+}
+
+.submit-box .box-address-row {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.submit-box .box-name-row {
+    margin-top: 10px;
+    float: right
+}
+
+.clear-float {
+    clear: both;
+}
+
+.submit-button {
+    float: right;
+}
+
+.submit-button button {
+    border-radius: 0;
+}

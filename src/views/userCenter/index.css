@@ -1,0 +1,21 @@
+.sidebar {
+    float: left;
+}
+
+.sidebar ul li {
+    text-align: right;
+}
+
+.sidebar .li-title {
+    color: #000
+}
+
+.sidebar a {
+    color: #000;
+    text-decoration: none;
+}
+
+.sidebar .li-active a {
+    color: #F40;
+    font-weight: 900;
+}

@@ -1,0 +1,17 @@
+.radio-row {
+    border: 1px dashed #BCBCBC;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.radio-row .title,
+.radio-row .radio {
+    display: inline-block;
+}
+
+.radio-row .title {
+    margin-right: 5px;
+}

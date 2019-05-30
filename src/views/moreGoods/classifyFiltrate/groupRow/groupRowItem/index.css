@@ -1,0 +1,19 @@
+.item {
+    float: left;
+    margin: 9px 40px 9px 0;
+    height: 18px;
+    color: #000;
+    text-decoration: none;
+}
+
+.item:hover {
+    color: #f40;
+}
+
+.item .text {
+    float: left;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

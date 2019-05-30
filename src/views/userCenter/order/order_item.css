@@ -1,0 +1,124 @@
+.order-item-box {
+    margin-bottom: 12px;
+    color: #000
+}
+
+.order-item-box .number-row {
+    padding-left: 20px;
+    border: 1px solid #e8e8e8;
+    height: 40px;
+    line-height: 38px;
+    font-size: 12px;
+    background-color: #f5f5f5;
+}
+
+.order-item-box .number-row .date {
+    margin-right: 10px;
+    font-weight: 700
+}
+
+.order-item-box .detail-row {
+    border: 1px solid #e8e8e8;
+    border-top: 0;
+    height: 118px;
+}
+
+.order-item-box .detail-row ul {
+    height: 118px;
+}
+
+.order-item-box .detail-row ul li {
+    height: 118px;
+    float: left;
+    text-align: center
+}
+
+.order-item-box .detail-row .li-0 {
+    width: 315px;
+    text-align: left
+}
+
+.order-item-box .detail-row .li-0 img {
+    width: 80px;
+    height: 80px;
+}
+
+.order-item-box .detail-row .li-0 div {
+    float: left;
+}
+
+.order-item-box .detail-row .li-0 .img {
+    padding: 20px;
+    width: 120px;
+    height: 118px;
+}
+
+.order-item-box .detail-row .li-0 .detail {
+    padding: 18px 0;
+    width: 195px;
+    height: 117px;
+    word-break: break-all;
+}
+
+.order-item-box .detail-row .li-1 {
+    width: 80px;
+    line-height: 117px;
+    font-family: verdana;
+    font-size: 12px;
+}
+
+.order-item-box .detail-row .total {
+    font-weight: 900
+}
+
+.order-item-box .detail-row .li-2 {
+    width: 120px;
+}
+
+.order-item-box .detail-row .condition {
+    padding: 30px 0
+}
+
+.order-item-box .detail-row .li-2-condition {
+    height: 58px;
+}
+
+.order-item-box .detail-row .li-2-condition .condition-str {
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.order-item-box .detail-row .li-2-condition .condition-str-change {
+    margin-top: 20px;
+}
+
+.order-item-box .detail-row .li-2-condition .condition-button-hidden {
+    display: none;
+}
+
+.order-item-box .detail-row .li-2-condition .condition-button button {
+    border: 0;
+    border-radius: 3px;
+    height: 25px;
+    line-height: 25px;
+    width: 64px;
+    background-color: #F40;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    outline: none;
+    cursor: pointer
+}
+
+.order-item-box .detail-row .check-detail {
+    line-height: 118px
+}
+
+.order-item-box .detail-row .check-detail a {
+    color: #000;
+}
+
+.order-item-box .detail-row .check-detail a:hover {
+    color: #f40;
+}

@@ -1,0 +1,178 @@
+.home-page-top {
+    width: 988px;
+    height: 280px;
+    background: #fafafa;
+}
+
+.home-page-top a {
+    color: #000;
+}
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 280px;
+    line-height: 280px;
+    background: #364d79;
+    overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+.carousel-ad,
+.center-ad,
+.home-page-top-right {
+    float: left;
+}
+
+.carousel-ad {
+    margin-right: 8px;
+    width: 520px;
+    height: 280px;
+}
+
+.center-ad {
+    margin-right: 8px;
+    height: 280px;
+    width: 162px;
+}
+
+.center-ad img {
+    height: 280px;
+}
+
+.home-page-top-right {
+    width: 290px;
+    height: 280px;
+    text-align: center;
+}
+
+.user-area,
+.goods-max {
+    float: left;
+}
+
+.user-area {
+    width: 280px;
+    height: 168px;
+    background-image: url(../../../assets/images/home/home_person.png);
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+    margin-left: 120px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+}
+
+.user-photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 12px;
+}
+
+.indent-condition {
+    margin-top: 5px;
+    height: 61px;
+}
+
+.indent-condition .not-login {
+    margin-top: 12px;
+}
+
+.indent-condition .not-login .not-login-button {
+    display: inline-block;
+}
+
+.indent-condition .not-login .not-login-button a {
+    margin: 0;
+    height: 25px;
+    background-color: #ff5000;
+    line-height: 25px;
+    color: #fff;
+    font-weight: 900;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.indent-condition .indent-num {
+    color: #F40;
+    font-weight: 900;
+}
+
+.indent-condition a {
+    display: inline-block;
+    width: 70px;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.indent-condition a:hover {
+    color: #F40;
+}
+
+.userButton {
+    float: left;
+}
+
+.goods-max {
+    width: 280px;
+    height: 101px;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.goods-max-title {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    text-align: left;
+    color: #f40;
+    font-weight: 900;
+}
+
+.goods {
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.goods-detail-max {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+#goods-detail-max-img {
+    width: 50px;
+    height: 50px;
+}
+
+#goods-detail-max-name {
+    width: 100px;
+    height: 40px;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 20px;
+}
+
+#goods-detail-max-price {
+    color: #F40;
+    height: 40px;
+}
+
+#goods-detail-max-img img {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,91 @@
+.avatar-box .file {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #333;
+    padding: 4px 20px;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.avatar-box .file input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.avatar-box .gradient {
+    filter: alpha(opacity=100 finishopacity=50 style=1 startx=0, starty=0, finishx=0, finishy=150) progid: DXImageTransform.Microsoft.gradient(startcolorstr=#fff, endcolorstr=#fff, gradientType=0);
+    -ms-filter: alpha(opacity=100 finishopacity=50 style=1 startx=0, starty=0, finishx=0, finishy=150) progid: DXImageTransform.Microsoft.gradient(startcolorstr=#fff, endcolorstr=#fff, gradientType=0);
+    /*IE8*/
+    background: #ccc;
+    /* 一些不支持背景渐变的浏览器 */
+    background: -moz-linear-gradient(top, #fff, #fff);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#214bd4), to(#214bd4));
+    background: -o-linear-gradient(top, #fff, #fff);
+}
+
+.avatar-box .box_row {
+    margin-bottom: 10px;
+}
+
+.avatar-box #preview1 {
+    width: 160px;
+    height: 160px;
+}
+
+.avatar-box #preview2 {
+    width: 60px;
+    height: 60px;
+}
+
+.avatar-box #preview3 {
+    width: 30px;
+    height: 30px;
+}
+
+.avatar-box .tips {
+    font-size: 10px;
+    color: #e88239;
+}
+
+.avatar-box .box_row .row {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.avatar-box .row_col {
+    margin-left: 30px;
+}
+
+.avatar-box .img-row {
+    margin-bottom: 5px;
+}
+
+.avatar-box.img-size {
+    margin-top: 5px;
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #808080;
+}
+
+.avatar-box #save {
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    border: 0;
+    background-color: #f40;
+    color: #fff;
+}
+
+.avatar-box .ant-upload-list-text {
+    width: 200px;
+}

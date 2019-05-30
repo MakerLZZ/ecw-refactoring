@@ -1,0 +1,30 @@
+.login-form {
+    max-width: 300px;
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.ant-btn-primary {
+    background-color: #F40;
+    border-color: #F40;
+}
+
+.ant-btn-primary:hover {
+    background-color: #f52b00;
+    border-color: #f52b00;
+}
+
+.ant-btn-primary:focus {
+    background-color: #F40;
+    border-color: #F40;
+}
+
+.ant-message {
+    font-family: Microsoft Yahei
+}

@@ -1,0 +1,86 @@
+.total-classify-row {
+    height: 38px;
+    border-bottom: 2px solid #f40;
+}
+
+.tabs {
+    font-size: 16px;
+    font-family: tahoma, arial, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+.tab {
+    float: left;
+    line-height: 38px;
+}
+
+.tab .link {
+    display: block;
+    height: 38px;
+    padding: 0 20px;
+}
+
+.tab .link:hover {
+    color: #fff;
+}
+
+.selected {
+    background: #f40;
+    color: #fff;
+}
+
+.all-classify-menu {
+    margin-top: 10px;
+}
+
+.filtrate-condition-row .all-text {
+    margin-top: 4px;
+    float: left;
+    line-height: 20px;
+    height: 20px;
+    color: #666;
+    text-decoration: none;
+}
+
+.filtrate-condition-row .icon-right {
+    float: left;
+    margin: 8px 10px 0 5px;
+    width: 5px;
+    height: 9px;
+}
+
+.filtrate-condition-row {
+    margin-left: 20px;
+    height: 25px;
+}
+
+.expand-collapse {
+    float: right;
+    margin: 0 0 0 4px;
+    height: 24px;
+    line-height: 24px;
+    border: solid 1px #e8e8e8;
+    padding: 0 9px;
+    background: #f6f6f6;
+    color: #6b6b6b;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.expand-collapse:hover {
+    color: #f40;
+}
+
+.expand-collapse-down {
+    margin-left: 5px;
+}
+
+.filtrate-groups-box {
+    margin-top: 11px;
+    position: relative;
+    width: 100%;
+}
+
+.group {
+    border: 1px solid #e8e8e8;
+    margin-top: -1px;
+}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Icon, Button} from 'antd'
 import moment from 'moment'
-import CountDown from '../../components/countDown/index'
+import CountDown from '../../../../components/countDown'
 import './index.less'
 class OrderDetail extends Component {
     state = {

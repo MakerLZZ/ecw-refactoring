@@ -1,0 +1,56 @@
+.mine-page-model {
+    margin-left: 100px;
+    color: #000;
+}
+
+.mine-title {
+    margin: 0;
+    height: 30px;
+    background-color: #E4E4E4;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 1px solid black;
+}
+
+.mine-nav {
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    border-top-color: white;
+    margin-bottom: 20px;
+}
+
+.mine-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.mine-nav ul li {
+    margin-left: 10px;
+    float: left;
+}
+
+
+/* .mine-nav .active {} */
+
+.mine-nav ul li a {
+    color: #000;
+}
+
+.mine-nav ul li .a-active {
+    color: #F40
+}
+
+.mine-nav ul li a:hover {
+    color: #F40;
+}
+
+.mine-center {
+    margin: 0;
+    padding: 20px;
+    min-height: 200px;
+    border: 1px solid #666666;
+}

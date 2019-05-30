@@ -1,0 +1,90 @@
+.goods-box {
+    float: left;
+    margin-top: 22px;
+    margin-right: 32px;
+    border: 1px solid #ededed;
+    width: 221px;
+    height: 360px;
+    background-color: #fff;
+}
+
+.goods-box-active {
+    border: 1px solid #F40;
+}
+
+.goods-box .goods-img img {
+    width: 220px;
+    height: 220px;
+}
+
+
+/*商品的下半部分*/
+
+.goods-box .ctx-box {}
+
+.ctx-box-row-1 {
+    margin-top: 11px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+.ctx-box-row-1 .ctx-box-row-price {
+    float: left;
+    font-size: 18px;
+    zoom: 1;
+}
+
+.ctx-box-row-price span {
+    color: #F40;
+    margin-right: 3px;
+}
+
+.ctx-box-row-price strong {
+    color: #F40;
+    font-weight: 700;
+    font-family: arial;
+    letter-spacing: 0.8px;
+}
+
+.deal-cnt {
+    float: right;
+    color: #888;
+}
+
+.ctx-box-row-2 {
+    margin-top: 6px;
+    height: 36px;
+    padding: 0 10px;
+    overflow: hidden;
+    font-weight: 400;
+    text-align: left;
+}
+
+.ctx-box-row-2 a :hover {
+    color: #F40;
+    text-decoration: underline;
+}
+
+.ctx-box-row-2 a {
+    color: #3d3d3d;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.ctx-box-row-2 a::after {
+    color: #F40;
+    text-decoration: solid;
+}
+
+.ctx-box-row-3 {
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.ctx-box-row-3 .location {
+    float: right;
+    color: #888;
+    line-height: 22px;
+}

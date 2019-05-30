@@ -1,0 +1,76 @@
+.order-page-model {
+    margin-left: 100px;
+}
+
+.indent-nav {
+    margin-bottom: 22px;
+}
+
+.indent-nav ul {
+    height: 36px;
+    text-align: center;
+}
+
+.indent-nav ul li {
+    float: left;
+    margin-right: 10px;
+    line-height: 36px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Microsoft YaHei;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.indent-nav .indent-nav-a {
+    text-decoration: none;
+    color: #000
+}
+
+.indent-nav .li-focus {
+    border-bottom: 2px solid #F40;
+}
+
+.indent-nav .a-focus {
+    color: #F40;
+    text-decoration: none;
+}
+
+.indent-nav-line {
+    margin-top: -24PX;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #e8e8e8;
+    margin-left: 0;
+}
+
+.order-page-model .title-row {
+    height: 40px;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e8e8e8;
+}
+
+.order-page-model .title-row ul {
+    height: 38px;
+}
+
+.order-page-model .title-row ul li {
+    height: 38px;
+    line-height: 38px;
+    float: left;
+    text-align: center;
+    color: #000
+}
+
+.order-page-model .title-row .li-0 {
+    width: 315px;
+}
+
+.order-page-model .title-row .li-1 {
+    width: 80px;
+}
+
+.order-page-model .title-row .li-2 {
+    width: 120px;
+}

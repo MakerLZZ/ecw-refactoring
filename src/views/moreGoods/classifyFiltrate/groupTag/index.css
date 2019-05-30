@@ -1,0 +1,26 @@
+.tag {
+    position: relative;
+    margin: 4px 5px 0 0;
+    padding: 0 19px 0 4px;
+    float: left;
+    max-width: 144px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #e8e8e8;
+    height: 18px;
+    line-height: 18px;
+    color: #666;
+    text-decoration: none;
+}
+
+.tag:hover {
+    border-color: #F40;
+    color: #666;
+}
+
+.tag .tag-icon {
+    position: absolute;
+    right: 2px;
+    top: 4px;
+}

@@ -1,0 +1,44 @@
+.group-row {
+    position: relative;
+    margin: 0 8px;
+    border-bottom: 1px dashed #dedede;
+}
+
+.hidden {
+    display: none;
+}
+
+#group_row_bottom {
+    border-bottom: 0;
+}
+
+.group-row .head {
+    position: absolute;
+    left: 11px;
+    top: 9px;
+    color: #999;
+}
+
+.group-row .body {
+    padding: 0 100px 0 70px;
+}
+
+.group-row .body .items .items-inner {
+    display: table;
+}
+
+.group-row .foot {
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.group-row .foot .show-more {
+    position: absolute;
+    right: 10px;
+    height: 18px;
+    padding-right: 10px;
+    line-height: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+}
