@@ -4,9 +4,9 @@ import './App.css';
 // import {Button} from 'antd';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Layout} from 'antd';
-import SerachRow from './views/searchRow'
+import SerachRow from './components/searchRow'
 import OrderDetail from './views/orderDetail'
-import FooterRow from './views/footerRow'
+import FooterRow from './components/footerRow'
 
 const {Header, Content, Footer} = Layout;
 class App extends Component {
