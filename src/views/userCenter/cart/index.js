@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './index.css'
 import PropTypes from 'prop-types';
 import {Checkbox,message} from 'antd'
-import CartPageItem from './cartPage_item'
+import CartItem from './cartItem'
 import GoodsImg from '../../../assets/images/cart/goods_img.png'
 import {Link} from 'react-router-dom'
 // import $ from 'jquery'
@@ -114,7 +114,7 @@ class CartPageModel extends Component {
     mapCartItem=()=>{
         return cartAll.map((v,i) => {
             return (
-                <CartPageItem
+                <CartItem
                     id={v.id}
                     cartItemImgSrc={v.cartItemImgSrc}
                     cartItemTitle={v.cartItemTitle}
@@ -123,7 +123,7 @@ class CartPageModel extends Component {
                     cartItemInventory={v.cartItemInventory}
                     key={v.key}
                     ref={`item${i}`}
-                    checkSelectItem={()=>this.checkSelectItem()}></CartPageItem>
+                    checkSelectItem={()=>this.checkSelectItem()}></CartItem>
             )
         })
     }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './cartPage_item.css'
+import './index.css'
 import {Checkbox} from 'antd'
 import PropTypes from 'prop-types'
 
