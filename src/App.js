@@ -90,52 +90,54 @@ export default class App extends Component {
                         </Header>
                         <Content className="app-content">
                             <SerachRow/>
-                            <div className="app-content-box">
-                                <Route
-                                    exact
-                                    path="/"
-                                    render={() => <Home
-                                    loginSuccess={this.state.loginSuccess}
-                                    topMenuVisitor={this.state.topMenuVisitor}/>}/>
-                                <Route exact path="/moreGoods" component={MoreGoods}/>
-                                <Route path="/orderDetail" render={() => <OrderDetail/>}/>
-                                <Route
-                                    exact
-                                    path="/goods_detail/:id"
-                                    render={({match}) =>< GoodsDetail no = {
-                                    match.params.id
-                                }
-                                loginSuccess = {
-                                    this.state.loginSuccess
-                                } />}/>
-                                <Route
-                                    exact
-                                    path="/register"
-                                    render={() => <Register
-                                    showFooter={this
-                                    .showFooter
-                                    .bind(this)}
-                                    hideFooter={this
-                                    .hideFooter
-                                    .bind(this)}
-                                    topMenuVisitor={this.state.topMenuVisitor}/>}/>
-                                <Route
-                                    exact
-                                    path="/personal_center/:str"
-                                    render={() => <UserCenter
-                                    ref={this
-                                    .setPerCenPageModel
-                                    .bind(this)}/>}/>
-                                <Route
-                                    path="/personal_center/cart"
-                                    render={() => <Cart perCenPageModel={this.state.perCenPageModel}/>}/>
-                                <Route
-                                    path="/personal_center/order"
-                                    render={() => <Order perCenPageModel={this.state.perCenPageModel}/>}/>
-                                <Route
-                                    path="/personal_center/mine"
-                                    render={() => <Mine perCenPageModel={this.state.perCenPageModel}/>}/>
-                                <Route path="/order_submit" render={() => <OrderSubmit/>}/>
+                            <div className="app-content-container">
+                                <div className="app-content-box">
+                                    <Route
+                                        exact
+                                        path="/"
+                                        render={() => <Home
+                                        loginSuccess={this.state.loginSuccess}
+                                        topMenuVisitor={this.state.topMenuVisitor}/>}/>
+                                    <Route exact path="/moreGoods" component={MoreGoods}/>
+                                    <Route path="/orderDetail" render={() => <OrderDetail/>}/>
+                                    <Route
+                                        exact
+                                        path="/goods_detail/:id"
+                                        render={({match}) =>< GoodsDetail no = {
+                                        match.params.id
+                                    }
+                                    loginSuccess = {
+                                        this.state.loginSuccess
+                                    } />}/>
+                                    <Route
+                                        exact
+                                        path="/register"
+                                        render={() => <Register
+                                        showFooter={this
+                                        .showFooter
+                                        .bind(this)}
+                                        hideFooter={this
+                                        .hideFooter
+                                        .bind(this)}
+                                        topMenuVisitor={this.state.topMenuVisitor}/>}/>
+                                    <Route
+                                        exact
+                                        path="/personal_center/:str"
+                                        render={() => <UserCenter
+                                        ref={this
+                                        .setPerCenPageModel
+                                        .bind(this)}/>}/>
+                                    <Route
+                                        path="/personal_center/cart"
+                                        render={() => <Cart perCenPageModel={this.state.perCenPageModel}/>}/>
+                                    <Route
+                                        path="/personal_center/order"
+                                        render={() => <Order perCenPageModel={this.state.perCenPageModel}/>}/>
+                                    <Route
+                                        path="/personal_center/mine"
+                                        render={() => <Mine perCenPageModel={this.state.perCenPageModel}/>}/>
+                                    <Route path="/order_submit" render={() => <OrderSubmit/>}/>
+                                </div>
                             </div>
                         </Content>
                         <FooterRow/>

@@ -26,13 +26,17 @@ li {
 
         .app-content {
             margin-top: 36px;
-            overflow: auto;
+            padding-bottom: 5px;
             background: #fff;
 
-            .app-content-box {
-                min-height: 380px;
+            .app-content-container {
+                height: calc(100vh - 188px);
                 margin-top: 75px;
-                padding-top: 10px;
+                overflow-y: scroll;
+            }
+
+            .app-content-box {
+                padding: 10px 0 0 15px;
             }
         }
     }
