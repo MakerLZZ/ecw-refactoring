@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import './index.css'
 import {Link} from 'react-router-dom'
 
-class GoodsItem extends Component {
+export default class GoodsItem extends Component {
 
-    state={
+    state = {
         className: 'goods-box'
     }
 
@@ -14,7 +14,7 @@ class GoodsItem extends Component {
     handleMouseOut = () => {
         this.setState({className: 'goods-box'});
     }
-    
+
     render() {
         return (
             <div
@@ -23,12 +23,9 @@ class GoodsItem extends Component {
                 onMouseOut={this.handleMouseOut}
                 id={this.props.no}>
                 <div className="pic-box">
-                    <Link
-                        className="goods_box_a"
-                        /* href="/Reception/GoodsDetailsView?no={this.props.no}" */
-                        to={"/goods_detail/"+this.props.no}
-                        /* target="_blank" */
-                        >
+                    <Link className="goods_box_a" /* href="/Reception/GoodsDetailsView?no={this.props.no}" */
+                        to={"/goods_detail/" + this.props.no} /* target="_blank" */
+                    >
                         <div className="goods-img">
                             <img src={this.props.img_src} alt=""/>
                         </div>
@@ -44,11 +41,8 @@ class GoodsItem extends Component {
                             人付款</div>
                     </div>
                     <div className="ctx-box-row-2">
-                        <Link
-                            className="goods_box_a"
-                            to={"/goods_detail/"+this.props.no}
-                            /* target="_blank" */
-                            >
+                        <Link className="goods_box_a" to={"/goods_detail/" + this.props.no} /* target="_blank" */
+                        >
                             <span className="ctx-box-row-tilte">{this.props.goods_title}</span>
                         </Link>
                     </div>
@@ -61,5 +55,3 @@ class GoodsItem extends Component {
         );
     }
 }
-
-export default GoodsItem
