@@ -15,7 +15,7 @@ class GoodsDetailRightImg extends Component {
 
     render() {
         return (
-            <a href="">
+            <a href="javascript:;" >
                 <img
                     className={this.state.animateClassName}
                     onMouseOver={this.handleMouseOver}

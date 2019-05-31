@@ -12,10 +12,19 @@ class ShowMoreButton extends Component {
 
     render() {
         return (
-            <a className="show-more" onClick={this.props.handleClose}>
+            <a href="javascript:;" className="show-more" onClick={this.props.handleClose}>
                 <span>
-                    <span>{this.props.close ? '更多':'收起'}</span>
-                    <Icon style={{fontSize:12}} type={this.props.close ? 'down':'up'} className="show-more-down"/>
+                    <span>{this.props.close
+                            ? '更多'
+                            : '收起'}</span>
+                    <Icon
+                        style={{
+                        fontSize: 12
+                    }}
+                        type={this.props.close
+                        ? 'down'
+                        : 'up'}
+                        className="show-more-down"/>
                 </span>
             </a>
         );

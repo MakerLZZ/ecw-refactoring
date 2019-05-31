@@ -1,7 +1,8 @@
 .home-page-top {
-    width: 988px;
+    display: flex;
+    justify-content: space-between;
+    width: 982px;
     height: 280px;
-    background: #fafafa;
 }
 
 .home-page-top a {
@@ -20,20 +21,12 @@
     color: #fff;
 }
 
-.carousel-ad,
-.center-ad,
-.home-page-top-right {
-    float: left;
-}
-
 .carousel-ad {
-    margin-right: 8px;
     width: 520px;
     height: 280px;
 }
 
 .center-ad {
-    margin-right: 8px;
     height: 280px;
     width: 162px;
 }
@@ -43,7 +36,7 @@
 }
 
 .home-page-top-right {
-    width: 290px;
+    width: 280px;
     height: 280px;
     text-align: center;
 }
@@ -57,6 +50,7 @@
     width: 280px;
     height: 168px;
     background-image: url(../../../assets/images/home/home_person.png);
+    border: 1px solid #ddd;
 }
 
 .user-photo {
@@ -127,7 +121,7 @@
     width: 280px;
     height: 101px;
     margin-top: 10px;
-    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
 .goods-max-title {

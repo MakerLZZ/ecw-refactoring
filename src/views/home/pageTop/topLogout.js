@@ -12,7 +12,7 @@ class HomeTopLogout extends Component {
         return (
             <div className="user-area">
                 <div className="user-photo">
-                    <a>
+                    <a href="javascript:;">
                         <img src={UserAvatar} alt=""/>
                     </a>
                 </div>
@@ -25,6 +25,7 @@ class HomeTopLogout extends Component {
                     <div className="not-login">
                         <div className="not-login-button">
                             <a
+                                href="javascript:;"
                                 onClick={()=>this.props.topMenuVisitor.showModal()}
                             >登录</a>
                         </div>

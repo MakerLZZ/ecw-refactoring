@@ -188,6 +188,7 @@ class GoodsDetailRight extends Component {
                         <span className='goods-select-type'>数量</span>
                         <span className='goods-select-stock'>
                             <a
+                                href="javascript:;"
                                 className={this.state.reduceClassName}
                                 onClick={() => this.handleReduceClick()}>-</a>
                             <input
@@ -198,6 +199,7 @@ class GoodsDetailRight extends Component {
                                 value={this.state.value}
                                 maxLength='8'/>
                             <a
+                                href="javascript:;"
                                 className={this.state.increaseClassName}
                                 onClick={() => this.handleIncreaseClick()}>+</a>
                             件
@@ -213,14 +215,14 @@ class GoodsDetailRight extends Component {
                     <div className='buy'>
                         {this.props.loginSuccess
                             ? <Link to="/order_submit" className='btn-a'>立即购买</Link>
-                            : <a className='btn-a' onClick={() => this.notLoginTip()}>立即购买</a>
+                            : <a href="javascript:;" className='btn-a' onClick={() => this.notLoginTip()}>立即购买</a>
 }
                     </div>
                     <div className='add'>
                         {this.props.loginSuccess
                             ? <Link to="/personal_center/cart" className='btn-a'>
                                     <Icon type="shopping-cart" className='add-icon'/>加入购物车</Link>
-                            : <a className='btn-a' onClick={() => this.notLoginTip()}>加入购物车</a>
+                            : <a href="javascript:;" className='btn-a' onClick={() => this.notLoginTip()}>加入购物车</a>
 }
                     </div>
                 </div>

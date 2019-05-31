@@ -67,10 +67,10 @@ class SortRow extends Component {
                 <div className='sort-inner'>
                     <ul className='sorts'>
                         <li className='sort'>
-                            <a className={this.state.sortAllName} onClick={this.handleAllClick}>{this.state.all}</a>
+                            <a href="javascript:;" className={this.state.sortAllName} onClick={this.handleAllClick}>{this.state.all}</a>
                         </li>
                         <li className='sort'>
-                            <a className={this.state.sortSalesName} onClick={this.handleSalesClick}>{this.state.sales}</a>
+                            <a href="javascript:;" className={this.state.sortSalesName} onClick={this.handleSalesClick}>{this.state.sales}</a>
                         </li>
                         <li
                             className={this.state.priceClassName}
@@ -84,10 +84,10 @@ class SortRow extends Component {
                             </div>
                             <ul className='droplist'>
                                 <li className='sort'>
-                                    <a className='link' onClick={this.handleUpClick}>价格从低到高</a>
+                                    <a href="javascript:;" className='link' onClick={this.handleUpClick}>价格从低到高</a>
                                 </li>
                                 <li className='sort'>
-                                    <a className='link' onClick={this.handleDownClick}>价格从高到低</a>
+                                    <a href="javascript:;" className='link' onClick={this.handleDownClick}>价格从高到低</a>
                                 </li>
                             </ul>
                         </li>

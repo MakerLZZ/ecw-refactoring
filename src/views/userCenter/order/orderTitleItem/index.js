@@ -32,7 +32,7 @@ class OrderTitleItem extends Component {
     render() {
         return (
             <li className={this.state.liClassName}>
-                <a className={this.state.aClassName} onClick={(condition)=>this.handleClick(this.state.titleName)} >{this.state.titleName}</a>
+                <a href="javascript:;" className={this.state.aClassName} onClick={(condition)=>this.handleClick(this.state.titleName)} >{this.state.titleName}</a>
                 {this.props.children}
             </li>
         );

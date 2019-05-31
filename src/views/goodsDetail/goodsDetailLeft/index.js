@@ -50,7 +50,7 @@ class GoodsDetailLeft extends Component {
                         {/* <li className={this.state.liClassName}>
                             <div className='pic'>
                                 <a
-                                    href=""
+                                    href="javascript:;" 
                                     className='pic-a'
                                     onMouseOver={this.handleMouseOver}>
                                     <img src={lay_1} alt=""/>

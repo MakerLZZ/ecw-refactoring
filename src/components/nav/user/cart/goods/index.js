@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './index.css'
 
-class MiniGoods extends Component {
+export default class MiniGoods extends Component {
     render() {
         return (
             <ul className="top-menu-cart-goods">
                 <li className="top-menu-cart-item">
                     <div className="mini-cart-img">
-                        <a><img src={this.props.img_src} alt=""/></a>
+                        <a href="javascript:;"><img src={this.props.img_src} alt=""/></a>
                     </div>
                     <div
                         className="mini-cart-count"
@@ -20,6 +20,7 @@ class MiniGoods extends Component {
                     </div>
                     <div className="mini-cart-title">
                         <a
+                            href="javascript:;"
                             style={{
                             width: "162px",
                             whiteSpace: "nowrap",
@@ -30,7 +31,7 @@ class MiniGoods extends Component {
                         </a>
                     </div>
                     <div className="mini-cart-del">
-                        <a>删除</a>
+                        <a href="javascript:;">删除</a>
                     </div>
                     <div className="mini-cart-info">
                         <span>{this.props.info}</span>
@@ -41,5 +42,3 @@ class MiniGoods extends Component {
         );
     }
 }
-
-export default MiniGoods

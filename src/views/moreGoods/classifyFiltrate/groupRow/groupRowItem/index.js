@@ -10,6 +10,7 @@ export default class GroupRowItem extends Component {
     render() {
         return (
             <a
+                href="javascript:;"
                 className="item"
                 onClick={() => this.props.handleConditionClick(this.props.classifyName + this.props.text, this.props.groupRowId)}>
                 <span className="text">{this.props.text}</span>

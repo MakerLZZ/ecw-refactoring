@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './index.css'
 import PropTypes from 'prop-types';
-import {Checkbox,message} from 'antd'
+import {Checkbox, message} from 'antd'
 import CartItem from './cartItem'
 import GoodsImg from '../../../assets/images/cart/goods_img.png'
 import {Link} from 'react-router-dom'
@@ -15,7 +15,7 @@ const cartAll = [
         'cartItemTitle': 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
         'cartItemUnit': 19.00,
         'cartItemNum': 10,
-        'cartItemInventory': 520,
+        'cartItemInventory': 520
     }, {
         'key': 1,
         'id': '1',
@@ -23,7 +23,7 @@ const cartAll = [
         'cartItemTitle': 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
         'cartItemUnit': 1.00,
         'cartItemNum': 120,
-        'cartItemInventory': 250,
+        'cartItemInventory': 250
     }, {
         'key': 2,
         'id': '2',
@@ -31,88 +31,101 @@ const cartAll = [
         'cartItemTitle': 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
         'cartItemUnit': 9.00,
         'cartItemNum': 1,
-        'cartItemInventory': 20,
-    },{
+        'cartItemInventory': 20
+    }, {
         'key': 3,
         'id': '3',
         'cartItemImgSrc': GoodsImg,
         'cartItemTitle': 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
         'cartItemUnit': 91.00,
         'cartItemNum': 12,
-        'cartItemInventory': 20,
+        'cartItemInventory': 20
     }
 ];
 
 class CartPageModel extends Component {
     static propsTypes = {
-        perCenPageModel : PropTypes.any
+        perCenPageModel: PropTypes.any
     }
 
-    state={
-        allChecked:false,
-        spanIconClassName:'right-span-icon-hidden',
-        submitButtonClassName:'submit-button',
-        submitButtonAbleClassName:'submit-button-able-hidden',
-        selectRowClassName:'cart-submit-row',
-        selectedNum:0,
-        tatalPrice:0.00,
+    state = {
+        allChecked: false,
+        spanIconClassName: 'right-span-icon-hidden',
+        submitButtonClassName: 'submit-button',
+        submitButtonAbleClassName: 'submit-button-able-hidden',
+        selectRowClassName: 'cart-submit-row',
+        selectedNum: 0,
+        tatalPrice: 0.00
     }
 
-    componentWillMount(){
-        this.props.perCenPageModel ? this.props.perCenPageModel.liActive('cart') : message.info("发生了未知的错误！")
+    componentWillMount() {
+        this.props.perCenPageModel
+            ? this
+                .props
+                .perCenPageModel
+                .liActive('cart')
+            : message.info("发生了未知的错误！")
     }
 
     //全选
     onChange(e) {
-        if(e.target.checked){
-            cartAll.forEach((v,i)=>{
-                this.refs[`item${i}`].checked();
+        if (e.target.checked) {
+            cartAll.forEach((v, i) => {
+                this
+                    .refs[`item${i}`]
+                    .checked();
             })
             this.setState({
-                allChecked:true,
-                spanIconClassName:'right-span-icon',
-                submitButtonClassName:'submit-button-hidden',
-                submitButtonAbleClassName:'submit-button-able'
-            },()=>this.checkSelectItem())
-        }else{
-            cartAll.forEach((v,i)=>{
-                this.refs[`item${i}`].unChecked();
+                allChecked: true,
+                spanIconClassName: 'right-span-icon',
+                submitButtonClassName: 'submit-button-hidden',
+                submitButtonAbleClassName: 'submit-button-able'
+            }, () => this.checkSelectItem())
+        } else {
+            cartAll.forEach((v, i) => {
+                this
+                    .refs[`item${i}`]
+                    .unChecked();
             })
             this.setState({
-                allChecked:false,
-                spanIconClassName:'right-span-icon-hidden',
-                submitButtonClassName:'submit-button',
-                submitButtonAbleClassName:'submit-button-able-hidden'
-            },()=>this.checkSelectItem())
+                allChecked: false,
+                spanIconClassName: 'right-span-icon-hidden',
+                submitButtonClassName: 'submit-button',
+                submitButtonAbleClassName: 'submit-button-able-hidden'
+            }, () => this.checkSelectItem())
         }
     }
 
-    onChangeA(){
-        if(this.state.allChecked){
-            cartAll.forEach((v,i)=>{
-                this.refs[`item${i}`].unChecked();
+    onChangeA() {
+        if (this.state.allChecked) {
+            cartAll.forEach((v, i) => {
+                this
+                    .refs[`item${i}`]
+                    .unChecked();
             })
             this.setState({
-                allChecked:false,
-                spanIconClassName:'right-span-icon-hidden',
-                submitButtonClassName:'submit-button-hidden',
-                submitButtonAbleClassName:'submit-button-able'
-            },()=>this.checkSelectItem())
-        }else{
-            cartAll.forEach((v,i)=>{
-                this.refs[`item${i}`].checked();
+                allChecked: false,
+                spanIconClassName: 'right-span-icon-hidden',
+                submitButtonClassName: 'submit-button-hidden',
+                submitButtonAbleClassName: 'submit-button-able'
+            }, () => this.checkSelectItem())
+        } else {
+            cartAll.forEach((v, i) => {
+                this
+                    .refs[`item${i}`]
+                    .checked();
             })
             this.setState({
-                allChecked:true,
-                spanIconClassName:'right-span-icon',
-                submitButtonClassName:'submit-button',
-                submitButtonAbleClassName:'submit-button-able-hidden'
-            },()=>this.checkSelectItem())
+                allChecked: true,
+                spanIconClassName: 'right-span-icon',
+                submitButtonClassName: 'submit-button',
+                submitButtonAbleClassName: 'submit-button-able-hidden'
+            }, () => this.checkSelectItem())
         }
     }
 
-    mapCartItem=()=>{
-        return cartAll.map((v,i) => {
+    mapCartItem = () => {
+        return cartAll.map((v, i) => {
             return (
                 <CartItem
                     id={v.id}
@@ -123,101 +136,75 @@ class CartPageModel extends Component {
                     cartItemInventory={v.cartItemInventory}
                     key={v.key}
                     ref={`item${i}`}
-                    checkSelectItem={()=>this.checkSelectItem()}></CartItem>
+                    checkSelectItem={() => this.checkSelectItem()}></CartItem>
             )
         })
     }
 
-    iOrNAllChecked=()=>{
+    iOrNAllChecked = () => {
         var allItemChecked = true;
         var haveItemChecked = false;
-        cartAll.forEach((v,i)=>{
-            if(!this.refs[`item${i}`].iOrNChecked()){
+        cartAll.forEach((v, i) => {
+            if (!this.refs[`item${i}`].iOrNChecked()) {
                 allItemChecked = false
             }
-            if(this.refs[`item${i}`].iOrNChecked()){
-                haveItemChecked=true
+            if (this.refs[`item${i}`].iOrNChecked()) {
+                haveItemChecked = true
             }
         })
 
-        if(allItemChecked){
-            this.setState({
-                allChecked:true
-            })
-        }else{
-            this.setState({
-                allChecked:false
-            })
+        if (allItemChecked) {
+            this.setState({allChecked: true})
+        } else {
+            this.setState({allChecked: false})
         }
 
-        if(haveItemChecked){
-            this.setState({
-                spanIconClassName:'right-span-icon',
-                submitButtonClassName:'submit-button-hidden',
-                submitButtonAbleClassName:'submit-button-able'
-            })
-        }else{
-            this.setState({
-                spanIconClassName:'right-span-icon-hidden',
-                submitButtonClassName:'submit-button',
-                submitButtonAbleClassName:'submit-button-able-hidden'
-            })
+        if (haveItemChecked) {
+            this.setState({spanIconClassName: 'right-span-icon', submitButtonClassName: 'submit-button-hidden', submitButtonAbleClassName: 'submit-button-able'})
+        } else {
+            this.setState({spanIconClassName: 'right-span-icon-hidden', submitButtonClassName: 'submit-button', submitButtonAbleClassName: 'submit-button-able-hidden'})
         }
     }
 
     //计算选择了多少件商品
-    staSelectedNum=()=>{
+    staSelectedNum = () => {
         var num = 0;
-        cartAll.forEach((v,i)=>{
-            if(this.refs[`item${i}`].iOrNChecked()){
+        cartAll.forEach((v, i) => {
+            if (this.refs[`item${i}`].iOrNChecked()) {
                 ++num
             }
         })
-        this.setState({
-            selectedNum:num
-        })
+        this.setState({selectedNum: num})
     }
-    
+
     //计算选择的商品的总价
-    staTatalPrice=()=>{
+    staTatalPrice = () => {
         var tatalPrice = 0.00;
-        cartAll.forEach((v,i)=>{
-            if(this.refs[`item${i}`].iOrNChecked()){
+        cartAll.forEach((v, i) => {
+            if (this.refs[`item${i}`].iOrNChecked()) {
                 tatalPrice += this.refs[`item${i}`].state.price;
             }
         })
-        this.setState({
-            tatalPrice:tatalPrice
-        })
+        this.setState({tatalPrice: tatalPrice})
     }
 
-    checkSelectItem(){
+    checkSelectItem() {
         this.iOrNAllChecked();
         this.staTatalPrice();
         this.staSelectedNum();
     }
 
-    // scrollRoll=()=>{
-    //     var botLocDiv = this.refs.bottom_location;
-    //     $(window).scroll( ()=> {
-    //         if ($(botLocDiv).offset().top + $(botLocDiv).height() - window.innerHeight > document.body.scrollTop) {
-    //             this.setState({
-    //                 selectRowClassName:'cart-submit-row'
-    //             })
-    //         }
-    //         else {
-    //             this.setState({
-    //                 selectRowClassName:'cart-submit-row row-unfixed'
-    //             })
-    //         }
-    //     })
-    // }
+    // scrollRoll=()=>{     var botLocDiv = this.refs.bottom_location;
+    // $(window).scroll( ()=> {         if ($(botLocDiv).offset().top +
+    // $(botLocDiv).height() - window.innerHeight > document.body.scrollTop) {
+    //       this.setState({                 selectRowClassName:'cart-submit-row'
+    //          })         }         else {             this.setState({
+    //    selectRowClassName:'cart-submit-row row-unfixed'             })         }
+    //    }) }
 
-    cartSubmit(){
+    cartSubmit() {}
 
-    }
-
-    componentDidMount(){
+    componentDidMount() {
         // this.scrollRoll();
     }
 
@@ -227,8 +214,8 @@ class CartPageModel extends Component {
                 <div className='cart-title'>
                     <ul>
                         <li className='all'>
-                            <Checkbox onChange={(e)=>this.onChange(e)} checked={this.state.allChecked} />
-                            <a onClick={()=>this.onChangeA()} className='all-a'>全选</a>
+                            <Checkbox onChange={(e) => this.onChange(e)} checked={this.state.allChecked}/>
+                            <a href="javascript:;" onClick={() => this.onChangeA()} className='all-a'>全选</a>
                         </li>
                         <li className='goods-detail'>商品信息</li>
                         <li className='unit'>单价</li>
@@ -244,11 +231,11 @@ class CartPageModel extends Component {
                 <div className='cart-bottom-border' ref='bottom_location'></div>
                 <div className={this.state.selectRowClassName}>
                     <div className='left'>
-                        <Checkbox onChange={(e)=>this.onChange(e)} checked={this.state.allChecked} />
-                        <a className='select-all' onClick={()=>this.onChangeA()} >全选</a>
+                        <Checkbox onChange={(e) => this.onChange(e)} checked={this.state.allChecked}/>
+                        <a href="javascript:;" className='select-all' onClick={() => this.onChangeA()}>全选</a>
                     </div>
                     <div className='left'>
-                        <a className='delete-all'>删除</a>
+                        <a href="javascript:;" className='delete-all'>删除</a>
                     </div>
                     <div className='right submit'>
                         <Link to='/personal_center/cart' className={this.state.submitButtonClassName}>结&nbsp;算</Link>

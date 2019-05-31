@@ -171,7 +171,8 @@ class CartPageItem extends Component {
                         <div className='num-row'>
                             <div className='goods-num-box'>
                                 <span className='goods-num-select'>
-                                    <a
+                                    <a 
+                                        href="javascript:;"
                                         className={this.state.reduceClassName}
                                         onClick={() => this.handleReduceClick()}>-</a>
                                     <input ref="numInput"
@@ -181,6 +182,7 @@ class CartPageItem extends Component {
                                         value={this.state.value}
                                         maxLength='8'/>
                                     <a
+                                        href="javascript:;"
                                         className={this.state.increaseClassName}
                                         onClick={() => this.handleIncreaseClick()}>+</a>
                                 </span>
@@ -197,7 +199,7 @@ class CartPageItem extends Component {
                     </li>
                     <li className='option'>
                         <div className='option-row'>
-                            <a onClick={()=>this.deleteItem()}>删除</a>
+                            <a href="javascript:;" onClick={()=>this.deleteItem()}>删除</a>
                         </div>
                     </li>
                 </ul>

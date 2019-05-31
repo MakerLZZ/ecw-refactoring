@@ -29,7 +29,7 @@ export default class VisitorNav extends Component {
                 <div className="visitor-nav-box">
                     <ul className="visitor-ul">
                         <li className="login">
-                            <a onClick={this.showModal}>亲，请登录</a>
+                            <a href="javascript:;" onClick={this.showModal}>亲，请登录</a>
                         </li>
                         <li className="register">
                             <Link to="/register">免费注册</Link>
@@ -41,10 +41,10 @@ export default class VisitorNav extends Component {
                         </li>
                         <li className="cart">
                             <Icon type="shopping-cart" className="shopping-cart-icon"/>
-                            <a disabled>购物车</a>
+                            <a href="javascript:;" disabled>购物车</a>
                         </li>
                         <li className="person-center">
-                            <a disabled>个人中心</a>
+                            <a href="javascript:;" disabled>个人中心</a>
                         </li>
                     </ul>
                 </div>

@@ -3,15 +3,15 @@ import {Icon} from 'antd'
 import './index.css'
 
 class GroupTag extends Component {
-    state={
-        iconColor:'#666'
+    state = {
+        iconColor: '#666'
     }
-    
+
     render() {
         return (
-            <a className='tag'>
+            <a href="javascript:;" className='tag'>
                 {this.props.text}
-                <Icon type='close' className='tag-icon' />
+                <Icon type='close' className='tag-icon'/>
             </a>
         );
     }

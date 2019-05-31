@@ -193,13 +193,16 @@ export default class ClassifyFiltrate extends Component {
                 <div className='total-classify-row'>
                     <ul className='tabs'>
                         <li className='tab'>
-                            <a className='link selected' href="">所有宝贝</a>
+                            <a className='link selected' href="javascript:;">所有宝贝</a>
                         </li>
                     </ul>
                 </div>
                 <div className='all-classify-menu'>
                     <div className='filtrate-condition-row'>
-                        <a className="expand-collapse" onClick={this.handleShowClick}>
+                        <a
+                            href="javascript:;"
+                            className="expand-collapse"
+                            onClick={this.handleShowClick}>
                             <span>
                                 <span>{this.state.showFiltrateButton}</span>
                                 <Icon type={this.state.icon} className="expand-collapse-down"/>

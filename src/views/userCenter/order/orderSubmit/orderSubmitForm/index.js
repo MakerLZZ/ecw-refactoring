@@ -139,7 +139,7 @@ class OrderSubmitForm extends Component {
                     )}
                 </FormItem>
                 <div className='form-button'>
-                    <a>+使用新地址</a>
+                    <a href="javascript:;">+使用新地址</a>
                 </div>
                 <div className='verify-row'>确认订单信息</div>
                 <div className='goods-table'>

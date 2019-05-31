@@ -2,23 +2,20 @@ import React, {Component} from 'react';
 import './index.css'
 
 class OrderItem extends Component {
-    state={
-        condition:this.props.condition,
-        conditionButton:this.props.condition_button,
-        conditionButtonClassName:'condition-button',
-        conditionStrClassName:'condition-str'
+    state = {
+        condition: this.props.condition,
+        conditionButton: this.props.condition_button,
+        conditionButtonClassName: 'condition-button',
+        conditionStrClassName: 'condition-str'
     }
 
-    componentWillMount(){
+    componentWillMount() {
         var condition = this.props.condition;
-        if(condition==='交易成功'){
-            this.setState({
-                conditionButtonClassName:'condition-button-hidden',
-                conditionStrClassName:'condition-str-change'
-            })
+        if (condition === '交易成功') {
+            this.setState({conditionButtonClassName: 'condition-button-hidden', conditionStrClassName: 'condition-str-change'})
         }
     }
-    
+
     render() {
         return (
             <div className='order-item-box'>
@@ -34,9 +31,17 @@ class OrderItem extends Component {
                             </div>
                             <div className='detail'>{this.props.detail}</div>
                         </li>
-                        <li className='li-1'><span>￥</span><span>{this.props.price}</span></li>
-                        <li className='li-1'><span>{this.props.num}</span></li>
-                        <li className='li-1 total'><span>￥</span><span>{this.props.price*this.props.num}</span></li>
+                        <li className='li-1'>
+                            <span>￥</span>
+                            <span>{this.props.price}</span>
+                        </li>
+                        <li className='li-1'>
+                            <span>{this.props.num}</span>
+                        </li>
+                        <li className='li-1 total'>
+                            <span>￥</span>
+                            <span>{this.props.price * this.props.num}</span>
+                        </li>
                         <li className='li-2 condition'>
                             <div className='li-2-condition'>
                                 <div className={this.state.conditionStrClassName}>
@@ -47,7 +52,9 @@ class OrderItem extends Component {
                                 </div>
                             </div>
                         </li>
-                        <li className='li-2 check-detail'><a>查看详情</a></li>
+                        <li className='li-2 check-detail'>
+                            <a href="javascript:;">查看详情</a>
+                        </li>
                     </ul>
                 </div>
                 {this.props.children}
