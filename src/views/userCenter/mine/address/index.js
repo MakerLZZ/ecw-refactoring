@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './address_model.css'
+import './index.css'
 import { Table } from 'antd';
-import AddressForm from './address_form'
+import AddressForm from './addressForm'
 const columns = [{
     title: '收货人',
     dataIndex: 'name',

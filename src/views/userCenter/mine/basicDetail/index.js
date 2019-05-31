@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './basicDetail_model.css'
-import Avatar from '../../../assets/images/mine/avatar.png'
-import BasicDetailForm from './basicDetail_form'
+import './index.css'
+import Avatar from '../../../../assets/images/mine/avatar.png'
+import BasicDetailForm from './basicDetailForm'
 class BasicDetailModel extends Component {
     state={
         hoverClassName:'img-hidden hover-hidden'

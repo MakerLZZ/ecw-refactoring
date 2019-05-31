@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './basicDetail_form.css'
+import './index.css'
 import {Form,Input,Radio,Select,Button} from 'antd';
 
 const FormItem = Form.Item;
