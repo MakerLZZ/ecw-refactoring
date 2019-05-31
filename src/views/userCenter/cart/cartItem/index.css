@@ -63,7 +63,7 @@
 .cart-item .detail .detail-img {
     height: 100%;
     padding: 20px 0;
-    margin-right: 20px;
+    margin-right: 18px;
 }
 
 .cart-item .detail .detail-img img {
@@ -100,7 +100,6 @@
     border: 1px solid #ccc;
     line-height: 23px;
     padding: 0;
-    overflow: hidden;
     text-align: center;
     color: #616161;
     background-color: #ededed;
