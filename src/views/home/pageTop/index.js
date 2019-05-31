@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
-import HomeTopLogin from './home_top_login';
-import HomeTopLogout from './home_top_logout';
+import TopLogin from './topLogin';
+import TopLogout from './topLogout';
 import {Carousel} from 'antd';
 import './index.css';
 import ad from '../../../assets/images/home/ad.png';
@@ -11,7 +11,7 @@ import Ad_Img_2 from '../../../assets/images/home/carousel_ad_2.png'
 import Ad_Img_3 from '../../../assets/images/home/carousel_ad_3.png'
 
 import PropTypes from 'prop-types'
-class HomePageTop extends Component {
+export default class PageTop extends Component {
     static propsTypes = {
         loginSuccess: PropTypes.bool,
         topMenuVisitor: PropTypes.any
@@ -41,8 +41,8 @@ class HomePageTop extends Component {
                 </div>
                 <div className="home-page-top-right">
                     {this.props.loginSuccess
-                        ? <HomeTopLogin/>
-                        : <HomeTopLogout topMenuVisitor={this.props.topMenuVisitor}/>
+                        ? <TopLogin/>
+                        : <TopLogout topMenuVisitor={this.props.topMenuVisitor}/>
 }
                     <div className="goods-max">
                         <div className="goods-max-title">
@@ -63,5 +63,3 @@ class HomePageTop extends Component {
         );
     }
 }
-
-export default HomePageTop;
