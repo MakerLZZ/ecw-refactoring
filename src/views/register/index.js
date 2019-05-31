@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './index.css'
+import './index.less'
 import PropTypes from 'prop-types'
 import {Steps} from 'antd'
 import FirstContent from './firstContent'
@@ -81,7 +81,6 @@ export default class Register extends Component {
                         {steps.map(item => <Step key={item.title} title={item.title}/>)}
                     </Steps>
                     <div className="steps-content">{steps[this.state.current].content}</div>
-                    <div className="steps-action"></div>
                 </div>
             </div>
         );
