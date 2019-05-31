@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Form, Input, Button, message} from 'antd';
 import PropTypes from 'prop-types'
 
-import './all_content.css'
+import './content.css'
 
 const FormItem = Form.Item;
 
@@ -11,24 +11,31 @@ class SecondContent extends Component {
         getPassword: PropTypes.func
     }
 
-    state={
-        confirmDirty:false
+    state = {
+        confirmDirty: false
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                var password = values.password;
-                message.success('密码设置成功！');
-                this.props.getPassword(password)
-            }
-        });
+        this
+            .props
+            .form
+            .validateFields((err, values) => {
+                if (!err) {
+                    var password = values.password;
+                    message.success('密码设置成功！');
+                    this
+                        .props
+                        .getPassword(password)
+                }
+            });
     }
 
     handleConfirmBlur = (e) => {
         const value = e.target.value;
-        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+        this.setState({
+            confirmDirty: this.state.confirmDirty || !!value
+        });
     }
 
     checkPassword = (rule, value, callback) => {
@@ -43,7 +50,7 @@ class SecondContent extends Component {
     checkConfirm = (rule, value, callback) => {
         const form = this.props.form;
         if (value && this.state.confirmDirty) {
-            form.validateFields(['confirm'], { force: true });
+            form.validateFields(['confirm'], {force: true});
         }
         callback();
     }
@@ -76,20 +83,20 @@ class SecondContent extends Component {
                             {
                                 required: true,
                                 message: '请输入长度大于6小于12的密码'
-                            },{
-                                pattern:'^[A-Za-z0-9]+$',
-                                message:'请输入数字或者英文字母组成的密码'
-                            },{
-                                min:6,
-                                message:'请输入长度大于6小于12的密码'
-                            },{
-                                max:12,
-                                message:'请输入长度大于6小于12的密码'
-                            },{
-                                validator: this.checkConfirm,
+                            }, {
+                                pattern: '^[A-Za-z0-9]+$',
+                                message: '请输入数字或者英文字母组成的密码'
+                            }, {
+                                min: 6,
+                                message: '请输入长度大于6小于12的密码'
+                            }, {
+                                max: 12,
+                                message: '请输入长度大于6小于12的密码'
+                            }, {
+                                validator: this.checkConfirm
                             }
-                        ],
-                    })(<Input type="password"  placeholder="请输入长度大于6小于12的密码"/>)}
+                        ]
+                    })(<Input type="password" placeholder="请输入长度大于6小于12的密码"/>)}
                 </FormItem>
                 <FormItem {...formItemLayout} label="确认密码" hasFeedback>
                     {getFieldDecorator('confirm', {
@@ -97,19 +104,19 @@ class SecondContent extends Component {
                             {
                                 required: true,
                                 message: '请确认你的密码'
-                            },{
-                                pattern:'^[A-Za-z0-9]+$',
-                                message:'请输入数字或者英文字母组成的密码'
-                            },{
-                                min:6,
-                                message:'请输入长度大于6小于12的密码'
-                            },{
-                                max:12,
-                                message:'请输入长度大于6小于12的密码'
                             }, {
-                                validator: this.checkPassword,
+                                pattern: '^[A-Za-z0-9]+$',
+                                message: '请输入数字或者英文字母组成的密码'
+                            }, {
+                                min: 6,
+                                message: '请输入长度大于6小于12的密码'
+                            }, {
+                                max: 12,
+                                message: '请输入长度大于6小于12的密码'
+                            }, {
+                                validator: this.checkPassword
                             }
-                        ],
+                        ]
                     })(<Input type="password" placeholder="请确认你的密码" onBlur={this.handleConfirmBlur}/>)}
                 </FormItem>
                 <FormItem>

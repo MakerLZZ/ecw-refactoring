@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './all_content.css'
-import {Icon} from 'antd'
+import './content.css'
+import {Icon, Button} from 'antd'
 import PropTypes from 'prop-types'
 
-class ThirdContent extends Component {
+export default class ThirdContent extends Component {
     static propsTypes = {
         account: PropTypes.string,
         topMenuVisitor: PropTypes.any
@@ -18,13 +18,9 @@ class ThirdContent extends Component {
                 <div className='bottom'>
                     <span className='bottom-title'>登录名：</span>
                     <span className='bottom-name'>{this.props.account}</span>
-                    <button
-                        className='ant-btn ant-btn-primary bottom-button'
-                        onClick={this.props.topMenuVisitor.showModal}>立即登录</button>
+                    <Button type="primary" onClick={this.props.topMenuVisitor.showModal}>立即登录</Button>
                 </div>
             </div>
         );
     }
 }
-
-export default ThirdContent;
