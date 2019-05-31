@@ -28,14 +28,6 @@ export default class App extends Component {
         needFooter: true
     }
 
-    hideFooter() {
-        this.setState({needFooter: false})
-    }
-
-    showFooter() {
-        this.setState({needFooter: true})
-    }
-
     setTopMenuVisitor(topMenuVisitor) {
         if (!this.state.topMenuVisitor) 
             this.setState({topMenuVisitor})
@@ -112,14 +104,7 @@ export default class App extends Component {
                                     <Route
                                         exact
                                         path="/register"
-                                        render={() => <Register
-                                        showFooter={this
-                                        .showFooter
-                                        .bind(this)}
-                                        hideFooter={this
-                                        .hideFooter
-                                        .bind(this)}
-                                        topMenuVisitor={this.state.topMenuVisitor}/>}/>
+                                        render={() => <Register topMenuVisitor={this.state.topMenuVisitor}/>}/>
                                     <Route
                                         exact
                                         path="/personal_center/:str"
