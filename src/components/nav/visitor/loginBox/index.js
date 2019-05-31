@@ -75,15 +75,13 @@ class LoginBox extends Component {
                             placement="right"
                             title="密码错误"> */ < Input prefix = { < Icon type = "lock" style = {{ fontSize: 13 }}/>}
                                 type="password"
-                                placeholder=""/ >
+                                placeholder="密码"/ >
                         //</Tooltip>
                         )}
                 </FormItem>
-                <FormItem>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        登录
-                    </Button>
-                </FormItem>
+                <Button type="primary" htmlType="submit" className="login-form-btn">
+                    登录
+                </Button>
             </Form>
         );
     }

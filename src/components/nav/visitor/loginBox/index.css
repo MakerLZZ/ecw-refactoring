@@ -1,30 +1,22 @@
-.login-form {
-    max-width: 300px;
-}
-
-.login-form-forgot {
-    float: right;
-}
-
-.login-form-button {
+.login-form-btn {
     width: 100%;
 }
 
-.ant-btn-primary {
-    background-color: #F40;
-    border-color: #F40;
+.ant-modal-content {
+    background-color: #FEF9E6;
 }
 
-.ant-btn-primary:hover {
-    background-color: #f52b00;
-    border-color: #f52b00;
+.ant-modal-header {
+    padding: 13px 16px;
+    background: #FEF9E6;
+    border-bottom: 1px solid #FEF9E6;
 }
 
-.ant-btn-primary:focus {
-    background-color: #F40;
-    border-color: #F40;
+.ant-modal-header .ant-modal-title {
+    font-size: 18px;
 }
 
-.ant-message {
-    font-family: Microsoft Yahei
+.ant-modal-body {
+    padding: 16px;
+    font-size: 12px;
 }

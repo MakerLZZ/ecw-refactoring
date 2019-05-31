@@ -51,6 +51,7 @@ export default class VisitorNav extends Component {
                 <div>
                     <Modal
                         className="login-box"
+                        maskClosable={false}
                         title="密码登录"
                         visible={this.state.visible}
                         onCancel={this.hideModal}
