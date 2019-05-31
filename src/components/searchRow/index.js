@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './index.less'
 import {Input} from 'antd';
 import {Link} from 'react-router-dom'
+// import logo from '../../assets/images/nav/logo.png';
+import title from '../../assets/images/nav/title.png';
 
 const Search = Input.Search;
 class SearchRow extends Component {
@@ -11,14 +13,13 @@ class SearchRow extends Component {
                 <div className="search-box">
                     <Link to="/">
                         <div className="logo">
-                            logo
+                            {/* <img src={logo} alt='' /> */}
+                            <img src={title} alt='' />
                         </div>
                     </Link>
                     <div className="search-input">
                         <Search enterButton="搜索" onSearch={value => console.log(value)}/>
-                        <div className="more-text">
-                            更多
-                        </div>
+                        <Link className="more-text" to="/moreGoods" target="">更多></Link>
                     </div>
                 </div>
 

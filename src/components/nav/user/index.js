@@ -1,10 +1,10 @@
-import {Menu, Icon} from 'antd';
 import React, {Component} from 'react';
 import './index.less';
-import Avatar from './avater'
-import Cart from './cart'
-import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import {Menu, Icon} from 'antd';
+import Avatar from './avater';
+import Cart from './cart';
+import {Link} from 'react-router-dom';
 
 const SubMenu = Menu.SubMenu;
 const cart_num = "29"
@@ -31,7 +31,7 @@ export default class UserNav extends Component {
                         onClick={this.handleClick}
                         selectedKeys={[this.state.current]}
                         mode="horizontal">
-                        <SubMenu title={< span > tb2308752_2013 < Icon type = "down" />< /span>}>
+                        <SubMenu title={<span>tb2308752_2013<Icon type="down" /></span>}>
                             <Avatar logout={this.props.logout}/>
                         </SubMenu>
                     </Menu>

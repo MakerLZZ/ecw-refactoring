@@ -241,14 +241,15 @@ export default class HomePageGoodsList extends Component {
                 </div>
                 <div className="float"></div>
                 <Pagination
+                    className="page-row"
+                    size="small"
                     total={msg.length}
                     defaultPageSize={this.state.pageSize}
                     showQuickJumper
                     onChange={this.handlePagination}
                     onShowSizeChange = {this.handleSizeChange}
                     pageSizeOptions={['8','16','32']}
-                    showSizeChanger={true}
-                    className="page-row"/>
+                    showSizeChanger={true}/>
             </div>
 
         );
