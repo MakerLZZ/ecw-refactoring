@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './order_item.css'
+import './index.css'
 
 class OrderItem extends Component {
     state={

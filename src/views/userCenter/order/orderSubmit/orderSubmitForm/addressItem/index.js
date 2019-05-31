@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import './address_item.css'
+import './index.css'
 import {Radio} from 'antd'
-class AddressItem extends Component {
-
+export default class AddressItem extends Component {
     render() {
         return (
             <div className='radio-row'>
@@ -18,5 +17,3 @@ class AddressItem extends Component {
         );
     }
 };
-
-export default AddressItem;

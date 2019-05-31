@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './index.css'
-import OrderSubmitForm from './order_submit_form'
+import OrderSubmitForm from './orderSubmitForm'
 class OrderSubmitModel extends Component {
     
     render() {
