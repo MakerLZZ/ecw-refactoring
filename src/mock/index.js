@@ -7,7 +7,7 @@ const userDetail = {
 		userName: /^[A-Za-z0-9]{6,12}$/,
 		name: '@cname()',
 		avatar: 'http://frcfile.jimicloud.com/fe244a78d0e44a7fad9e7e5cee5bd508.png',
-		'sex|1': [ '男', '女' ],
+		'sex|1': [ '1', '2' ],
 		'constellation|1': [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12' ]
 	}
 };
