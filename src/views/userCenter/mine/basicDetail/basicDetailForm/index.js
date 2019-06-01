@@ -104,18 +104,18 @@ class BasicDetailForm extends Component {
 						rules: []
 					})(
 						<Select placeholder="请选择一种星座">
-							<Option value="摩羯座">摩羯座</Option>
-							<Option value="水瓶座">水瓶座</Option>
-							<Option value="双鱼座">双鱼座</Option>
-							<Option value="白羊座">白羊座</Option>
-							<Option value="金牛座">金牛座</Option>
-							<Option value="双子座">双子座</Option>
-							<Option value="巨蟹座">巨蟹座</Option>
-							<Option value="狮子座">狮子座</Option>
-							<Option value="处女座">处女座</Option>
-							<Option value="天秤座">天秤座</Option>
-							<Option value="天蝎座">天蝎座</Option>
-							<Option value="射手座">射手座</Option>
+							<Option value="1">摩羯座</Option>
+							<Option value="2">水瓶座</Option>
+							<Option value="3">双鱼座</Option>
+							<Option value="4">白羊座</Option>
+							<Option value="5">金牛座</Option>
+							<Option value="6">双子座</Option>
+							<Option value="7">巨蟹座</Option>
+							<Option value="8">狮子座</Option>
+							<Option value="9">处女座</Option>
+							<Option value="10">天秤座</Option>
+							<Option value="11">天蝎座</Option>
+							<Option value="12">射手座</Option>
 						</Select>
 					)}
 				</FormItem>

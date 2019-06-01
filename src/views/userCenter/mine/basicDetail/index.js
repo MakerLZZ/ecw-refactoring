@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import './index.less';
+import PropTypes from 'prop-types';
 import Avatar from '../../../../assets/images/mine/avatar.png';
 import BasicDetailForm from './basicDetailForm';
 
 export default class BasicDetailModel extends Component {
+	static propsTypes = {
+		handleClick: PropTypes.func
+	};
+
 	state = {
 		hoverClassName: 'img-hidden hover-hidden'
 	};
+
+	handleLiClick(id) {
+		this.props.handleClick(id);
+	}
 
 	handleMouseOver = () => {
 		this.setState({ hoverClassName: 'img-hidden hover' });
@@ -33,7 +42,12 @@ export default class BasicDetailModel extends Component {
 							<div className="img-a span-a">
 								<img src={Avatar} alt="" />
 							</div>
-							<div className={`${this.state.hoverClassName} span-a`}>编辑头像</div>
+							<div
+								className={`${this.state.hoverClassName} span-a`}
+								onClick={(id) => this.handleLiClick(1)}
+							>
+								编辑头像
+							</div>
 						</div>
 					</div>
 				</div>

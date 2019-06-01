@@ -70,7 +70,7 @@ export default class Mine extends Component {
 	};
 
 	render() {
-		const firstContent = <BasicDetail />;
+		const firstContent = <BasicDetail handleClick={(e) => this.handleClick(e)} />;
 
 		const secondContent = <Avatar />;
 
