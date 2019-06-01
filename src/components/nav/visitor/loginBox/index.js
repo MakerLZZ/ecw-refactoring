@@ -3,6 +3,7 @@ import './index.less';
 import PropTypes from 'prop-types';
 import { Form, Icon, Input, Button, message } from 'antd';
 import Http from '@/http';
+import Cookies from 'js-cookie';
 
 const FormItem = Form.Item;
 
@@ -24,17 +25,12 @@ class LoginBox extends Component {
 					if (acc && acc.pass !== passwordInput) {
 						message.error('密码输错了哟，亲！');
 					} else if (acc && acc.pass === passwordInput) {
-						Http.get('/getUserDetail')
-							.then((res) => {
-								console.log(res);
-							})
-							.catch((err) => {
-								console.log(err);
-							});
-						message.success('欢迎来到吃货世界！');
-						this.props.hideModal();
-						//window.location.href='/';
-						this.props.login();
+						Http.get('/getUserDetail').then((res) => {
+							Cookies.set('userDetail', res.data.data, { expires: 1 });
+							message.success('欢迎来到吃货世界！');
+							this.props.hideModal();
+							this.props.login(res.data.data);
+						});
 					} else {
 						message.error('没有找到此账号，请核实后再试');
 					}

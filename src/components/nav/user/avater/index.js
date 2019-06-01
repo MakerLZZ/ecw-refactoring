@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './index.less';
 import { Modal } from 'antd';
-import avater from '@/assets/images/nav/tool.png';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-export default class Avater extends Component {
+class Avater extends Component {
 	static propTypes = {
+		userName: PropTypes.string,
+		avatar: PropTypes.string,
 		logout: PropTypes.func
 	};
 
@@ -24,7 +25,8 @@ export default class Avater extends Component {
 		setTimeout(() => {
 			this.props.logout();
 			this.setState({ visible: false, confirmLoading: false });
-		}, 500);
+		}, 100);
+		this.props.history.push('/');
 	};
 
 	handleCancel = () => {
@@ -37,18 +39,12 @@ export default class Avater extends Component {
 			<div className="top-menu-avater">
 				<div className="item-avater">
 					<Link to="/personal_center/mine">
-						<img src={avater} alt="" />
+						<img src={this.props.avatar} alt="" />
 					</Link>
 				</div>
 				<div className="item-text">
 					<div className="item-text-detail">
-						<Link
-							to="/personal_center/mine"
-							className="nav-avater-a"
-							style={{
-								textDecoration: 'none'
-							}}
-						>
+						<Link to="/personal_center/mine" className="nav-avater-a">
 							<span>信息管理</span>
 						</Link>
 					</div>
@@ -75,3 +71,5 @@ export default class Avater extends Component {
 		);
 	}
 }
+
+export default withRouter(Avater);

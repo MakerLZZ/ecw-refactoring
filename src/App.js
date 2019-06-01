@@ -3,14 +3,14 @@ import './App.less';
 import './assets/less/base.less';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Layout, message } from 'antd';
-
 import './mock';
-
+import Cookie from 'js-cookie';
+// 页面元素组件
 import SerachRow from './components/searchRow';
 import FooterRow from './components/footerRow';
 import UserNav from './components/nav/user';
 import VisitorNav from './components/nav/visitor';
-
+// 页面
 import Home from './views/home';
 import MoreGoods from './views/moreGoods';
 import GoodsDetail from './views/goodsDetail';
@@ -23,10 +23,26 @@ import OrderSubmit from './views/userCenter/order/orderSubmit';
 import OrderDetail from './views/userCenter/order/orderDetail';
 
 const { Header, Content } = Layout;
+
 export default class App extends Component {
+	// static contextTypes = {
+	// 	router: React.PropTypes.object
+	// };
+
 	state = {
-		loginSuccess: false
+		loginSuccess: false,
+		userDetail: {}
 	};
+
+	componentWillMount() {
+		let userDetail = Cookie.get('userDetail');
+		if (userDetail) {
+			this.setState({
+				loginSuccess: true,
+				userDetail: JSON.parse(userDetail)
+			});
+		}
+	}
 
 	setTopMenuVisitor(topMenuVisitor) {
 		if (!this.state.topMenuVisitor) {
@@ -34,34 +50,21 @@ export default class App extends Component {
 		}
 	}
 
-	setPerCenPageModel(perCenPageModel) {
-		if (!this.state.perCenPageModel) {
-			this.setState({ perCenPageModel });
-		}
+	login(data) {
+		this.setState({
+			userDetail: data,
+			loginSuccess: true
+		});
+		console.log(this.state.userDetail);
 	}
 
-	login() {
-		this.setState(
-			{
-				loginSuccess: true
-			},
-			() => {
-				//回调函数
-			}
-		);
-	}
-
-	logout() {
+	logout = () => {
 		message.success('注销成功！');
-		this.setState({ loginSuccess: false });
-	}
-
-	navFooterHidden(nowPath) {
-		const path = '/register';
-		if (nowPath === path) {
-			this.setState({ navFooterHidden: true });
-		}
-	}
+		Cookie.remove('userDetail');
+		this.setState({
+			loginSuccess: false
+		});
+	};
 
 	render() {
 		return (
@@ -78,6 +81,7 @@ export default class App extends Component {
 								<UserNav
 									className={this.state.loginSuccess ? 'user-nav' : 'user-nav-hidden'}
 									logout={() => this.logout()}
+									userDetail={this.state.userDetail}
 								/>
 							</div>
 						</Header>
@@ -92,6 +96,8 @@ export default class App extends Component {
 											<Home
 												loginSuccess={this.state.loginSuccess}
 												topMenuVisitor={this.state.topMenuVisitor}
+												avatar={this.state.userDetail.avatar}
+												userName={this.state.userDetail.userName}
 											/>
 										)}
 									/>
@@ -109,22 +115,13 @@ export default class App extends Component {
 										path="/register"
 										render={() => <Register topMenuVisitor={this.state.topMenuVisitor} />}
 									/>
+									<Route exact path="/personal_center/:str" render={() => <UserCenter />} />
+									<Route path="/personal_center/cart" render={() => <Cart />} />
+									<Route path="/personal_center/order" render={() => <Order />} />
 									<Route
 										exact
-										path="/personal_center/:str"
-										render={() => <UserCenter ref={this.setPerCenPageModel.bind(this)} />}
-									/>
-									<Route
-										path="/personal_center/cart"
-										render={() => <Cart perCenPageModel={this.state.perCenPageModel} />}
-									/>
-									<Route
-										path="/personal_center/order"
-										render={() => <Order perCenPageModel={this.state.perCenPageModel} />}
-									/>
-									<Route
 										path="/personal_center/mine"
-										render={() => <Mine perCenPageModel={this.state.perCenPageModel} />}
+										render={() => <Mine userDetail={this.state.userDetail} />}
 									/>
 									<Route path="/order_submit" render={() => <OrderSubmit />} />
 								</div>
