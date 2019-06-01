@@ -126,7 +126,6 @@ export default class AvatarModel extends Component {
 				</div>
 				<div>
 					<Button
-						id="save"
 						type="primary"
 						onClick={this.handleUpload}
 						disabled={this.state.fileList.length === 0}
