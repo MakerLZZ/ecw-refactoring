@@ -46,7 +46,7 @@ export default class Register extends Component {
 	render() {
 		const firstContent = <FirstContent getAccount={(e) => this.getAccount(e)} />;
 
-		const secondContent = <SecondContent getPassword={(e) => this.getPassword(e)} />;
+		const secondContent = <SecondContent account={this.account} getPassword={(e) => this.getPassword(e)} />;
 
 		const thirdContent = <ThirdContent account={this.account} topMenuVisitor={this.props.topMenuVisitor} />;
 
