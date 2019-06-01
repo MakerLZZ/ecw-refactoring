@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
-import {Icon} from 'antd'
-import './index.css'
+import React, { Component } from 'react';
+import { Icon } from 'antd';
+import './index.less';
 
-class GroupTag extends Component {
-    state = {
-        iconColor: '#666'
-    }
+export default class GroupTag extends Component {
+	state = {
+		iconColor: '#666'
+	};
 
-    render() {
-        return (
-            <a href="javascript:;" className='tag'>
-                {this.props.text}
-                <Icon type='close' className='tag-icon'/>
-            </a>
-        );
-    }
-};
-
-export default GroupTag;
+	render() {
+		return (
+			<div className="tag">
+				{this.props.text}
+				<Icon type="close" className="tag-icon" />
+			</div>
+		);
+	}
+}

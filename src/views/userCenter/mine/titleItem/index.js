@@ -1,40 +1,36 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types'
-class TitleItem extends Component {
-    static propsTypes = {
-        handleClick: PropTypes.func
-    }
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-    state = {
-        aClassName: this.props.aClassName,
-        id: this.props.id
-    }
+export default class TitleItem extends Component {
+	static propsTypes = {
+		handleClick: PropTypes.func
+	};
 
-    handleLiClick(id) {
-        this
-            .props
-            .handleClick(id)
-    }
+	state = {
+		aClassName: this.props.aClassName,
+		id: this.props.id
+	};
 
-    aFocus() {
-        this.setState({aClassName: 'a-active'})
-    }
+	handleLiClick(id) {
+		this.props.handleClick(id);
+	}
 
-    aUnFocus() {
-        this.setState({aClassName: 'a'})
-    }
+	aFocus() {
+		this.setState({ aClassName: 'a-active' });
+	}
 
-    render() {
-        return (
-            <li>
-                <a
-                    href="javascript:;"
-                    className={this.state.aClassName}
-                    onClick={(id) => this.handleLiClick(this.state.id)}>{this.props.titleName}</a>
-                {this.props.children}
-            </li>
-        );
-    }
-};
+	aUnFocus() {
+		this.setState({ aClassName: 'a' });
+	}
 
-export default TitleItem;
+	render() {
+		return (
+			<li>
+				<span className={`${this.state.aClassName} span-a`} onClick={(id) => this.handleLiClick(this.state.id)}>
+					{this.props.titleName}
+				</span>
+				{this.props.children}
+			</li>
+		);
+	}
+}

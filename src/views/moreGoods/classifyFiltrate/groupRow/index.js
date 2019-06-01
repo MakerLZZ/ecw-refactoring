@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './index.css'
+import './index.less'
 import GroupRowItem from './groupRowItem'
 import ShowMoreButton from './showMoreBtn'
 import PropTypes from 'prop-types'

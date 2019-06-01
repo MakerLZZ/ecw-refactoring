@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.less';
+import './assets/less/base.less'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Layout, message} from 'antd';
 import SerachRow from './components/searchRow'
@@ -24,18 +25,19 @@ import OrderDetail from './views/userCenter/order/orderDetail'
 const {Header, Content} = Layout;
 export default class App extends Component {
     state = {
-        loginSuccess: false,
-        needFooter: true
+        loginSuccess: false
     }
 
     setTopMenuVisitor(topMenuVisitor) {
-        if (!this.state.topMenuVisitor) 
-            this.setState({topMenuVisitor})
+        if (!this.state.topMenuVisitor) {
+            this.setState({topMenuVisitor});
+        }
     }
 
     setPerCenPageModel(perCenPageModel) {
-        if (!this.state.perCenPageModel) 
+        if (!this.state.perCenPageModel) {
             this.setState({perCenPageModel})
+        }
     }
 
     login() {
