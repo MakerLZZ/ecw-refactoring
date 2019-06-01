@@ -14,7 +14,9 @@ import PropTypes from 'prop-types';
 export default class PageTop extends Component {
 	static propsTypes = {
 		loginSuccess: PropTypes.bool,
-		topMenuVisitor: PropTypes.any
+		topMenuVisitor: PropTypes.any,
+		avatar: PropTypes.avatar,
+		userName: PropTypes.string
 	};
 
 	render() {
@@ -40,7 +42,11 @@ export default class PageTop extends Component {
 					<img src={ad} alt="" />
 				</div>
 				<div className="home-page-top-right">
-					{this.props.loginSuccess ? <TopLogin /> : <TopLogout topMenuVisitor={this.props.topMenuVisitor} />}
+					{this.props.loginSuccess ? (
+						<TopLogin avatar={this.props.avatar} userName={this.props.userName} />
+					) : (
+						<TopLogout topMenuVisitor={this.props.topMenuVisitor} />
+					)}
 					<div className="goods-max">
 						<div className="goods-max-title">
 							<span>热门推荐</span>
