@@ -7,11 +7,21 @@ class AddressForm extends Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
+				this.props.addItem(values, this.props.type, this.props.editKey)
 			}
 		});
 	};
 	onChange = () => {};
 	render() {
+		let area = '',address = '', code = '', name = '', phonenumber = '', condition = false
+		if (this.props.defaultValue) {
+			area = this.props.defaultValue.area
+			address = this.props.defaultValue.address
+			code = this.props.defaultValue.code
+			name = this.props.defaultValue.name
+			phonenumber = this.props.defaultValue.phonenumber
+			condition = this.props.defaultValue.condition
+		}
 		const { getFieldDecorator } = this.props.form;
 		const formItemLayout = {
 			labelCol: {
@@ -53,6 +63,7 @@ class AddressForm extends Component {
 			<Form onSubmit={this.handleSubmit}>
 				<FormItem {...formItemLayout} label="所在地区" hasFeedback>
 					{getFieldDecorator('area', {
+						initialValue: area,
 						rules: [
 							{
 								required: true,
@@ -75,6 +86,7 @@ class AddressForm extends Component {
 				</FormItem>
 				<FormItem {...formItemLayout} label="详细地址" hasFeedback>
 					{getFieldDecorator('address', {
+						initialValue: address,
 						rules: [
 							{
 								required: true,
@@ -97,6 +109,7 @@ class AddressForm extends Component {
 				</FormItem>
 				<FormItem {...formItemCodeLayout} label="邮政编码" hasFeedback>
 					{getFieldDecorator('code', {
+						initialValue: code,
 						rules: [
 							{
 								required: true,
@@ -118,7 +131,8 @@ class AddressForm extends Component {
 					})(<Input type="text" placeholder="如您不清楚邮递区号，请填写000000" />)}
 				</FormItem>
 				<FormItem {...formItemCodeLayout} label="收货人姓名" hasFeedback>
-					{getFieldDecorator('Name', {
+					{getFieldDecorator('name', {
+						initialValue: name,
 						rules: [
 							{
 								pattern: '^[0-9a-zA-Z\u4E00-\u9FA5_]{1,}$',
@@ -136,7 +150,8 @@ class AddressForm extends Component {
 					})(<Input type="text" placeholder="长度不超过25" />)}
 				</FormItem>
 				<FormItem {...formItemCodeLayout} label="手机号码" hasFeedback>
-					{getFieldDecorator('phoneNum', {
+					{getFieldDecorator('phonenumber', {
+						initialValue: phonenumber,
 						rules: [
 							{
 								required: true,
@@ -158,7 +173,9 @@ class AddressForm extends Component {
 					})(<Input type="text" placeholder="请输入11位手机号" />)}
 				</FormItem>
 				<FormItem>
-					{getFieldDecorator('radio')(
+					{getFieldDecorator('condition', {
+						initialValue: condition,
+					})(
 						<Checkbox className="check" onChange={this.onChange()}>
 							设置为默认地址
 						</Checkbox>
