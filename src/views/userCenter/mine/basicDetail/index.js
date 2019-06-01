@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 import PropTypes from 'prop-types';
-import Avatar from '../../../../assets/images/mine/avatar.png';
+import Avatar from '@/assets/images/mine/avatar.png';
 import BasicDetailForm from './basicDetailForm';
 
 export default class BasicDetailModel extends Component {

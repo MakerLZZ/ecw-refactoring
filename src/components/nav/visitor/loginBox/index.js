@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './index.less';
-import { Form, Icon, Input, Button, message } from 'antd';
 import PropTypes from 'prop-types';
-const userName = '123';
-const password = '123';
+import { Form, Icon, Input, Button, message } from 'antd';
+import Http from '@/http';
+
 const FormItem = Form.Item;
 
 class LoginBox extends Component {
@@ -16,17 +16,28 @@ class LoginBox extends Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				var userNameInput = values.userName;
-				var passwordInput = values.password;
-				if (userNameInput === userName && passwordInput === password) {
-					message.success('欢迎来到吃货世界！');
-					this.props.hideModal();
-					//window.location.href='/';
-					this.props.login();
-				} else if (userNameInput !== userName) {
-					message.error('没有找到此账号，请核实后再试');
-				} else if (userNameInput === userName && passwordInput !== password) {
-					message.error('密码输错了哟，亲！');
+				let userNameInput = values.userName;
+				let passwordInput = values.password;
+				let accounts = JSON.parse(localStorage.getItem('accounts'));
+				if (accounts) {
+					let acc = accounts.find((v) => v.user === userNameInput);
+					if (acc && acc.pass !== passwordInput) {
+						message.error('密码输错了哟，亲！');
+					} else if (acc && acc.pass === passwordInput) {
+						Http.get('/getUserDetail')
+							.then((res) => {
+								console.log(res);
+							})
+							.catch((err) => {
+								console.log(err);
+							});
+						message.success('欢迎来到吃货世界！');
+						this.props.hideModal();
+						//window.location.href='/';
+						this.props.login();
+					} else {
+						message.error('没有找到此账号，请核实后再试');
+					}
 				}
 			}
 		});

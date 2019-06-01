@@ -3,7 +3,7 @@ import './index.less';
 import PropTypes from 'prop-types';
 import { Checkbox, message } from 'antd';
 import CartItem from './cartItem';
-import GoodsImg from '../../../assets/images/cart/goods_img.png';
+import GoodsImg from '@/assets/images/cart/goods_img.png';
 import { Link } from 'react-router-dom';
 // import $ from 'jquery'
 

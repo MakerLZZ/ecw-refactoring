@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './index.less';
 import { Modal } from 'antd';
-import avater from '../../../../assets/images/nav/tool.png';
+import avater from '@/assets/images/nav/tool.png';
 import { Link } from 'react-router-dom';
 
 export default class Avater extends Component {

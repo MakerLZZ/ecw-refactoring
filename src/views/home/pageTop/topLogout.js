@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import UserAvatar from '../../../assets/images/home/default_avatar.png';
+import UserAvatar from '@/assets/images/home/default_avatar.png';
 import PropTypes from 'prop-types';
 class HomeTopLogout extends Component {
 	static propsTypes = {

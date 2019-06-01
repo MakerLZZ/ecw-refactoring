@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import { Pagination } from 'antd';
 import GoodsItem from './goods';
-import GoodsImg from '../../assets/images/home/goods_img.png';
+import GoodsImg from '@/assets/images/home/goods_img.png';
 
 var msg = [
 	{

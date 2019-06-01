@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import { Form, Radio, Table, Button, Modal } from 'antd';
 import AddressItem from './addressItem';
-import GoodsImg from '../../../../../assets/images/order/goods_img.png';
+import GoodsImg from '@/assets/images/order/goods_img.png';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 

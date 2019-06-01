@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './index.less';
 import PageTop from './pageTop';
-import GoodsList from '../../components/goodsList';
+import GoodsList from '@/components/goodsList';
 import BackTop from './backTop';
 
 export default class Home extends Component {

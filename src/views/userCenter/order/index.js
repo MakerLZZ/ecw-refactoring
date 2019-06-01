@@ -3,7 +3,7 @@ import './index.less'
 import {Pagination} from 'antd'
 import PropTypes from 'prop-types'
 import {message} from 'antd'
-import GoodsImg from '../../../assets/images/order/goods_img.png'
+import GoodsImg from '@/assets/images/order/goods_img.png'
 import OrderTitleItem from './orderTitleItem'
 import OrderItem from './orderItem'
 const orderTitles = [

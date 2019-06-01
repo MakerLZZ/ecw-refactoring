@@ -4,11 +4,11 @@ import TopLogin from './topLogin';
 import TopLogout from './topLogout';
 import { Carousel } from 'antd';
 import './index.less';
-import ad from '../../../assets/images/home/ad.png';
-import TopGoods from '../../../assets/images/home/top_goods.png';
+import ad from '@/assets/images/home/ad.png';
+import TopGoods from '@/assets/images/home/top_goods.png';
 // import Ad_Img_1 from './home_page_img/carousel_ad_1.png'
-import Ad_Img_2 from '../../../assets/images/home/carousel_ad_2.png';
-import Ad_Img_3 from '../../../assets/images/home/carousel_ad_3.png';
+import Ad_Img_2 from '@/assets/images/home/carousel_ad_2.png';
+import Ad_Img_3 from '@/assets/images/home/carousel_ad_3.png';
 
 import PropTypes from 'prop-types';
 export default class PageTop extends Component {

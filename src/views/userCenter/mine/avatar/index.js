@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.less';
-import DefaultAvatar from '../../../../assets/images/mine/defAvatar.png';
+import DefaultAvatar from '@/assets/images/mine/defAvatar.png';
 
 import { Upload, Button, Icon, message } from 'antd';
 // import reqwest from 'reqwest';

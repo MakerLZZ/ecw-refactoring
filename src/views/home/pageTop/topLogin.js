@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
-import UserAvatar from '../../../assets/images/home/user_avatar.png';
+import UserAvatar from '@/assets/images/home/user_avatar.png';
 
 class HomeTopLogin extends Component {
     render() {

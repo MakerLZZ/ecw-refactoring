@@ -3,7 +3,7 @@ import './index.less';
 import { Input } from 'antd';
 import { Link } from 'react-router-dom';
 // import logo from '../../assets/images/nav/logo.png';
-import title from '../../assets/images/nav/title.png';
+import title from '@/assets/images/nav/title.png';
 
 const Search = Input.Search;
 export default class SearchRow extends Component {

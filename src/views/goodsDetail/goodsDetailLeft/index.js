@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './index.less';
 import GoodsDetailLi from './goodsDetailLi';
-import lay_1 from '../../../assets/images/goodsDetail/lay_1.png';
-import lay_2 from '../../../assets/images/goodsDetail/lay_2.png';
-import lay_3 from '../../../assets/images/goodsDetail/lay_3.png';
+import lay_1 from '@/assets/images/goodsDetail/lay_1.png';
+import lay_2 from '@/assets/images/goodsDetail/lay_2.png';
+import lay_3 from '@/assets/images/goodsDetail/lay_3.png';
 
 var msg = [
 	{
