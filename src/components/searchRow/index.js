@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import './index.less';
 import { Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logo from '@/assets/images/nav/logo110x55.png';
+import events from '@/libs/events';
 
 const Search = Input.Search;
-export default class SearchRow extends Component {
+class SearchRow extends Component {
+	handleSearch = (value) => {
+		this.props.history.push('/more_goods');
+		events.emit('changeGoods', [ value ]);
+	};
+
 	render() {
 		return (
 			<div className="search-row">
@@ -16,8 +22,8 @@ export default class SearchRow extends Component {
 						</div>
 					</Link>
 					<div className="search-input">
-						<Search enterButton="搜索" onSearch={(value) => console.log(value)} />
-						<Link className="more-text" to="/moreGoods" target="">
+						<Search enterButton="搜索" onSearch={(value) => this.handleSearch(value)} />
+						<Link className="more-text" to="/more_goods" target="">
 							更多>
 						</Link>
 					</div>
@@ -26,3 +32,5 @@ export default class SearchRow extends Component {
 		);
 	}
 }
+
+export default withRouter(SearchRow);
