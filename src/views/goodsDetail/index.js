@@ -14,7 +14,7 @@ export default class GoodsDetailPageModel extends Component {
 			<div className="goods-detail-page" id={this.props.no}>
 				<GoodsDetailLeft />
 				<GoodsDetailRight loginSuccess={this.props.loginSuccess} />
-				<Test />
+				{/* <Test /> */}
 			</div>
 		);
 	}

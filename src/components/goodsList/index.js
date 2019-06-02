@@ -306,10 +306,8 @@ export default class HomePageGoodsList extends Component {
 		return (
 			<div className="goods-row">
 				<div className="goods-list">{this.resetData(cloneVal, type)}</div>
-				<div className="float" />
 				<Pagination
 					className="page-row"
-					size="small"
 					total={msg.length}
 					defaultPageSize={this.state.pageSize}
 					showQuickJumper

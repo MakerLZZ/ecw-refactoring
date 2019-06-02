@@ -10,7 +10,7 @@ export default class AddressModel extends Component {
 				title: '收货人',
 				dataIndex: 'name',
 				key: 'name',
-				width: '65px'
+				width: '90px'
 			},
 			{
 				title: '所在地区',
