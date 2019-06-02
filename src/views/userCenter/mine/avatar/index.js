@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
 import './index.less';
+import PropTypes from 'prop-types';
 import DefaultAvatar from '@/assets/images/mine/defAvatar.png';
 
 import { Upload, Button, Icon, message } from 'antd';
 // import reqwest from 'reqwest';
 
-export default class AvatarModel extends Component {
+export default class Avatar extends Component {
+	static propsType = {
+		avatar: PropTypes.string,
+		handleClick: PropTypes.func,
+		modifyAvatar: PropTypes.func
+	};
+
 	state = {
 		fileList: [],
 		uploading: false,
-		preAvatar: DefaultAvatar
+		preAvatar: this.props.avatar
 	};
 
 	handleUpload = () => {
 		const { fileList } = this.state;
-		const formData = new FormData();
-		fileList.forEach((file) => {
-			formData.append('files[]', file);
-		});
+		// const formData = new FormData();
+		// fileList.forEach((file) => {
+		// 	formData.append('files[]', file);
+		// });
 
-		this.setState({ uploading: true });
+		this.getBase64(fileList[0], (preAvatar) => this.props.modifyAvatar(preAvatar));
+		message.success('保存成功！');
+		this.props.handleClick(0);
+
+		this.setState({ uploading: false });
 
 		// You can use any AJAX library you like
 		// reqwest({

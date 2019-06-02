@@ -65,6 +65,12 @@ export default class App extends Component {
 		});
 	};
 
+	modifyAvatar(avatar) {
+		let userDetail = this.state.userDetail;
+		userDetail.avatar = avatar;
+		this.setState({ userDetail: userDetail });
+	}
+
 	render() {
 		return (
 			<div className="app">
@@ -120,7 +126,12 @@ export default class App extends Component {
 									<Route
 										exact
 										path="/personal_center/mine"
-										render={() => <Mine userDetail={this.state.userDetail} />}
+										render={() => (
+											<Mine
+												userDetail={this.state.userDetail}
+												modifyAvatar={(e) => this.modifyAvatar(e)}
+											/>
+										)}
 									/>
 									<Route path="/order_submit" render={() => <OrderSubmit />} />
 								</div>

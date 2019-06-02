@@ -29,7 +29,8 @@ const titles = [
 
 export default class Mine extends Component {
 	static propsTypes = {
-		userDeatil: PropTypes.object
+		userDetail: PropTypes.object,
+		modifyAvatar: PropTypes.func
 	};
 
 	state = {
@@ -65,7 +66,11 @@ export default class Mine extends Component {
 	render() {
 		let components = [
 			<BasicDetail userDeatil={this.props.userDetail} handleClick={(e) => this.handleClick(e)} />,
-			<Avatar />,
+			<Avatar
+				avatar={this.props.userDetail.avatar}
+				handleClick={(e) => this.handleClick(e)}
+				modifyAvatar={(e) => this.props.modifyAvatar(e)}
+			/>,
 			<Address />
 		];
 
