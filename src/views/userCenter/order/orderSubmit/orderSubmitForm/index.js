@@ -153,7 +153,7 @@ class OrderSubmitForm extends Component {
 				</div>
 				<div className="clear-float" />
 				<FormItem className="submit-button">
-					<Link to="/orderDetail">
+					<Link to="/order_detail">
 						<Button type="primary" htmlType="submit" className="">
 							确认订单
 						</Button>

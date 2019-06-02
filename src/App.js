@@ -101,7 +101,7 @@ export default class App extends Component {
 										)}
 									/>
 									<Route exact path="/more_goods" component={MoreGoods} />
-									<Route path="/orderDetail" render={() => <OrderDetail />} />
+									<Route path="/order_detail" render={() => <OrderDetail />} />
 									<Route
 										exact
 										path="/goods_detail/:id"

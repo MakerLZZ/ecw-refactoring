@@ -1,22 +1,61 @@
 import React, { Component } from 'react';
 import './index.less';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { message } from 'antd';
 
-export default class OrderItem extends Component {
+class OrderItem extends Component {
 	state = {
-		condition: this.props.condition,
-		conditionButton: this.props.condition_button,
+		condition: '',
+		conditionButton: '',
 		conditionButtonClassName: 'condition-button',
 		conditionStrClassName: 'condition-str'
 	};
 
 	componentWillMount() {
-		var condition = this.props.condition;
-		if (condition === '交易成功') {
+		let condition = this.props.condition;
+		if (condition === 4) {
 			this.setState({
 				conditionButtonClassName: 'condition-button-hidden',
 				conditionStrClassName: 'condition-str-change'
 			});
+		}
+		let conditionStr = this.enumCondition(condition);
+		let btnStr = this.enumBtnStr(condition);
+		this.setState({
+			condition: conditionStr,
+			conditionButton: btnStr
+		});
+	}
+
+	enumCondition(index) {
+		let enumCondStrObj = {
+			1: '待付款',
+			2: '待发货',
+			3: '待收货',
+			4: '交易成功'
+		};
+		return enumCondStrObj[index];
+	}
+
+	enumBtnStr(index) {
+		let enumBtnStrObj = {
+			1: '付款',
+			2: '提醒发货',
+			3: '收货',
+			4: ''
+		};
+		return enumBtnStrObj[index];
+	}
+
+	handleClick(cond) {
+		if (cond === 1) {
+			this.props.history.push('/order_detail');
+		}
+		if (cond === 2) {
+			message.success('已提醒');
+		}
+		if (cond === 3) {
+			message.success('收货成功');
 		}
 	}
 
@@ -44,7 +83,7 @@ export default class OrderItem extends Component {
 						</li>
 						<li className="li-1 total">
 							<span>￥</span>
-							<span>{this.props.price * this.props.num}</span>
+							<span>{(this.props.price * this.props.num).toFixed(2)}</span>
 						</li>
 						<li className="li-2 condition">
 							<div className="li-2-condition">
@@ -52,12 +91,14 @@ export default class OrderItem extends Component {
 									<span>{this.state.condition}</span>
 								</div>
 								<div className={this.state.conditionButtonClassName}>
-									<button>{this.state.conditionButton}</button>
+									<button onClick={(condition) => this.handleClick(this.props.condition)}>
+										{this.state.conditionButton}
+									</button>
 								</div>
 							</div>
 						</li>
 						<li className="li-2 check-detail">
-							<Link to="/orderDetail">
+							<Link to="/order_detail">
 								<span className="span-a">查看详情</span>
 							</Link>
 						</li>
@@ -68,3 +109,5 @@ export default class OrderItem extends Component {
 		);
 	}
 }
+
+export default withRouter(OrderItem);

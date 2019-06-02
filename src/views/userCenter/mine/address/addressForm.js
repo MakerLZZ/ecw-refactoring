@@ -7,20 +7,27 @@ class AddressForm extends Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				this.props.addItem(values, this.props.type, this.props.editKey)
+				this.props.addItem(values, this.props.type, this.props.editKey);
 			}
 		});
 	};
+
 	onChange = () => {};
+
 	render() {
-		let area = '',address = '', code = '', name = '', phonenumber = '', condition = false
+		let area = '',
+			address = '',
+			code = '',
+			name = '',
+			phonenumber = '',
+			condition = false;
 		if (this.props.defaultValue) {
-			area = this.props.defaultValue.area
-			address = this.props.defaultValue.address
-			code = this.props.defaultValue.code
-			name = this.props.defaultValue.name
-			phonenumber = this.props.defaultValue.phonenumber
-			condition = this.props.defaultValue.condition
+			area = this.props.defaultValue.area;
+			address = this.props.defaultValue.address;
+			code = this.props.defaultValue.code;
+			name = this.props.defaultValue.name;
+			phonenumber = this.props.defaultValue.phonenumber;
+			condition = this.props.defaultValue.condition;
 		}
 		const { getFieldDecorator } = this.props.form;
 		const formItemLayout = {
@@ -37,7 +44,7 @@ class AddressForm extends Component {
 					span: 24
 				},
 				sm: {
-					span: 10
+					span: 15
 				}
 			}
 		};
@@ -61,7 +68,7 @@ class AddressForm extends Component {
 		};
 		return (
 			<Form onSubmit={this.handleSubmit}>
-				<FormItem {...formItemLayout} label="所在地区" hasFeedback>
+				<FormItem {...formItemCodeLayout} label="所在地区" hasFeedback>
 					{getFieldDecorator('area', {
 						initialValue: area,
 						rules: [
@@ -70,19 +77,19 @@ class AddressForm extends Component {
 								message: '请输入收货所在地区'
 							},
 							{
-								pattern: '^[\u4E00-\u9FA5]+$',
+								pattern: /^[\u4e00-\u9fa5]+$/,
 								message: '只能输入汉字'
 							},
 							{
-								min: 3,
-								message: '请输入长度大于3小于12的汉字'
+								min: 5,
+								message: '请输入长度大于5小于20的汉字'
 							},
 							{
-								max: 12,
-								message: '请输入长度大于2小于12的汉字'
+								max: 20,
+								message: '请输入长度大于5小于20的汉字'
 							}
 						]
-					})(<Input type="text" placeholder="" />)}
+					})(<Input type="text" placeholder="请输入所在地区" />)}
 				</FormItem>
 				<FormItem {...formItemLayout} label="详细地址" hasFeedback>
 					{getFieldDecorator('address', {
@@ -93,16 +100,16 @@ class AddressForm extends Component {
 								message: '请输入详细地址'
 							},
 							{
-								pattern: '^[\u4E00-\u9FA5]+$',
-								message: '只能输入汉字'
+								pattern: /^[0-9a-zA-Z\u4E00-\u9FA5-]+$/,
+								message: '只能输入汉字，数字,字母或减号'
 							},
 							{
-								min: 2,
-								message: '请输入长度大于2小于6的汉字'
+								min: 5,
+								message: '请输入长度大于5小于20的汉字'
 							},
 							{
-								max: 6,
-								message: '请输入长度大于2小于6的汉字'
+								max: 20,
+								message: '请输入长度大于5小于20的汉字'
 							}
 						]
 					})(<Input type="textarea" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息" />)}
@@ -116,7 +123,7 @@ class AddressForm extends Component {
 								message: '请输入邮政编码'
 							},
 							{
-								pattern: '^[0-9]*[1-9][0-9]*$',
+								pattern: /^[0-9]+$/,
 								message: '只能输入数字'
 							},
 							{
@@ -135,16 +142,20 @@ class AddressForm extends Component {
 						initialValue: name,
 						rules: [
 							{
-								pattern: '^[0-9a-zA-Z\u4E00-\u9FA5_]{1,}$',
+								required: true,
+								message: '请输入收货人姓名'
+							},
+							{
+								pattern: /^[0-9a-zA-Z\u4E00-\u9FA5_]+$/,
 								message: '只能输入汉字，数字,字母或下划线'
 							},
 							{
-								min: 2,
-								message: '请输入长度大于2小于25'
+								min: 1,
+								message: '请输入长度大于1小于10'
 							},
 							{
-								max: 25,
-								message: '请输入长度大于2小于25'
+								max: 10,
+								message: '请输入长度大于1小于10'
 							}
 						]
 					})(<Input type="text" placeholder="长度不超过25" />)}
@@ -158,7 +169,7 @@ class AddressForm extends Component {
 								message: '请输入手机号码'
 							},
 							{
-								pattern: '^[0-9]*[1-9][0-9]*$',
+								pattern: /^[0-9]+$/,
 								message: '只能输入数字'
 							},
 							{
@@ -174,7 +185,7 @@ class AddressForm extends Component {
 				</FormItem>
 				<FormItem>
 					{getFieldDecorator('condition', {
-						initialValue: condition,
+						initialValue: condition
 					})(
 						<Checkbox className="check" onChange={this.onChange()}>
 							设置为默认地址

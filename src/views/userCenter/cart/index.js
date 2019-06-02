@@ -2,51 +2,12 @@ import React, { Component } from 'react';
 import './index.less';
 import { Checkbox } from 'antd';
 import CartItem from './cartItem';
-import GoodsImg from '@/assets/images/cart/goods_img.png';
 import { Link } from 'react-router-dom';
-// import $ from 'jquery'
-
-const cartAll = [
-	{
-		key: 0,
-		id: '0',
-		cartItemImgSrc: GoodsImg,
-		cartItemTitle: 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
-		cartItemUnit: 19.0,
-		cartItemNum: 10,
-		cartItemInventory: 520
-	},
-	{
-		key: 1,
-		id: '1',
-		cartItemImgSrc: GoodsImg,
-		cartItemTitle: 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
-		cartItemUnit: 1.0,
-		cartItemNum: 120,
-		cartItemInventory: 250
-	},
-	{
-		key: 2,
-		id: '2',
-		cartItemImgSrc: GoodsImg,
-		cartItemTitle: 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
-		cartItemUnit: 9.0,
-		cartItemNum: 1,
-		cartItemInventory: 20
-	},
-	{
-		key: 3,
-		id: '3',
-		cartItemImgSrc: GoodsImg,
-		cartItemTitle: 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
-		cartItemUnit: 91.0,
-		cartItemNum: 12,
-		cartItemInventory: 20
-	}
-];
+import Http from '@/http';
 
 export default class CartPageModel extends Component {
 	state = {
+		cartList: [],
 		allChecked: false,
 		spanIconClassName: 'right-span-icon-hidden',
 		submitButtonClassName: 'submit-button',
@@ -56,10 +17,18 @@ export default class CartPageModel extends Component {
 		tatalPrice: 0.0
 	};
 
+	componentWillMount() {
+		Http.get('/getCartList').then((res) => {
+			this.setState({
+				cartList: res.data.data
+			});
+		});
+	}
+
 	//全选
 	onChange(e) {
 		if (e.target.checked) {
-			cartAll.forEach((v, i) => {
+			this.state.cartList.forEach((v, i) => {
 				this.refs[`item${i}`].checked();
 			});
 			this.setState(
@@ -72,7 +41,7 @@ export default class CartPageModel extends Component {
 				() => this.checkSelectItem()
 			);
 		} else {
-			cartAll.forEach((v, i) => {
+			this.state.cartList.forEach((v, i) => {
 				this.refs[`item${i}`].unChecked();
 			});
 			this.setState(
@@ -89,7 +58,7 @@ export default class CartPageModel extends Component {
 
 	onChangeA() {
 		if (this.state.allChecked) {
-			cartAll.forEach((v, i) => {
+			this.state.cartList.forEach((v, i) => {
 				this.refs[`item${i}`].unChecked();
 			});
 			this.setState(
@@ -102,7 +71,7 @@ export default class CartPageModel extends Component {
 				() => this.checkSelectItem()
 			);
 		} else {
-			cartAll.forEach((v, i) => {
+			this.state.cartList.forEach((v, i) => {
 				this.refs[`item${i}`].checked();
 			});
 			this.setState(
@@ -118,7 +87,7 @@ export default class CartPageModel extends Component {
 	}
 
 	mapCartItem = () => {
-		return cartAll.map((v, i) => {
+		return this.state.cartList.map((v, i) => {
 			return (
 				<CartItem
 					id={v.id}
@@ -138,7 +107,7 @@ export default class CartPageModel extends Component {
 	isAllChecked = () => {
 		var allItemChecked = true;
 		var haveItemChecked = false;
-		cartAll.forEach((v, i) => {
+		this.state.cartList.forEach((v, i) => {
 			if (!this.refs[`item${i}`].iOrNChecked()) {
 				allItemChecked = false;
 			}
@@ -171,7 +140,7 @@ export default class CartPageModel extends Component {
 	//计算选择了多少件商品
 	staSelectedNum = () => {
 		var num = 0;
-		cartAll.forEach((v, i) => {
+		this.state.cartList.forEach((v, i) => {
 			if (this.refs[`item${i}`].iOrNChecked()) {
 				++num;
 			}
@@ -182,7 +151,7 @@ export default class CartPageModel extends Component {
 	//计算选择的商品的总价
 	staTatalPrice = () => {
 		var tatalPrice = 0.0;
-		cartAll.forEach((v, i) => {
+		this.state.cartList.forEach((v, i) => {
 			if (this.refs[`item${i}`].iOrNChecked()) {
 				tatalPrice += this.refs[`item${i}`].state.price;
 			}
@@ -204,7 +173,7 @@ export default class CartPageModel extends Component {
 	//    selectRowClassName:'cart-submit-row row-unfixed'             })         }
 	//    }) }
 
-	cartSubmit() {}
+	// cartSubmit() {}
 
 	componentDidMount() {
 		// this.scrollRoll();
