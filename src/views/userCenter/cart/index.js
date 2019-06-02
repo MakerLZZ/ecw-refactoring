@@ -135,7 +135,7 @@ export default class CartPageModel extends Component {
 		});
 	};
 
-	iOrNAllChecked = () => {
+	isAllChecked = () => {
 		var allItemChecked = true;
 		var haveItemChecked = false;
 		cartAll.forEach((v, i) => {
@@ -191,7 +191,7 @@ export default class CartPageModel extends Component {
 	};
 
 	checkSelectItem() {
-		this.iOrNAllChecked();
+		this.isAllChecked();
 		this.staTatalPrice();
 		this.staSelectedNum();
 	}
