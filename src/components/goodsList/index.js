@@ -3,6 +3,7 @@ import './index.less';
 import { Pagination } from 'antd';
 import GoodsItem from './goods';
 import GoodsImg from '../../assets/images/home/goods_img.png';
+import events from '../../tool/events'
 
 var msg = [
 	{
@@ -10,8 +11,8 @@ var msg = [
 		no: '0',
 		img_src: GoodsImg,
 		goods_price: '0.00',
-		goods_sales: 50,
-		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
+		goods_sales: 2,
+		goods_title: '【天猫超市】盼盼豆腐干',
 		goods_location: '浙江杭州'
 	},
 	{
@@ -19,7 +20,7 @@ var msg = [
 		no: '1',
 		img_src: GoodsImg,
 		goods_price: '1.00',
-		goods_sales: 50,
+		goods_sales: 30,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -28,7 +29,7 @@ var msg = [
 		no: '2',
 		img_src: GoodsImg,
 		goods_price: '2.00',
-		goods_sales: 50,
+		goods_sales: 12,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -37,8 +38,8 @@ var msg = [
 		no: '3',
 		img_src: GoodsImg,
 		goods_price: '3.00',
-		goods_sales: 50,
-		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
+		goods_sales: 11,
+		goods_title: '【天猫超市】原味曲奇饼干',
 		goods_location: '浙江杭州'
 	},
 	{
@@ -46,7 +47,7 @@ var msg = [
 		no: '4',
 		img_src: GoodsImg,
 		goods_price: '4.00',
-		goods_sales: 50,
+		goods_sales: 65,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -55,8 +56,8 @@ var msg = [
 		no: '5',
 		img_src: GoodsImg,
 		goods_price: '5.00',
-		goods_sales: 50,
-		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
+		goods_sales: 77,
+		goods_title: '【天猫超市】盼盼豆糖果',
 		goods_location: '浙江杭州'
 	},
 	{
@@ -64,7 +65,7 @@ var msg = [
 		no: '6',
 		img_src: GoodsImg,
 		goods_price: '6.00',
-		goods_sales: 50,
+		goods_sales: 95,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -73,7 +74,7 @@ var msg = [
 		no: '7',
 		img_src: GoodsImg,
 		goods_price: '7.00',
-		goods_sales: 50,
+		goods_sales: 16,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -82,7 +83,7 @@ var msg = [
 		no: '8',
 		img_src: GoodsImg,
 		goods_price: '8.00',
-		goods_sales: 50,
+		goods_sales: 47,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -91,7 +92,7 @@ var msg = [
 		no: '9',
 		img_src: GoodsImg,
 		goods_price: '9.00',
-		goods_sales: 50,
+		goods_sales: 52,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -100,7 +101,7 @@ var msg = [
 		no: '10',
 		img_src: GoodsImg,
 		goods_price: '10.00',
-		goods_sales: 50,
+		goods_sales: 926,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -109,7 +110,7 @@ var msg = [
 		no: '11',
 		img_src: GoodsImg,
 		goods_price: '11.00',
-		goods_sales: 50,
+		goods_sales: 456,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -118,7 +119,7 @@ var msg = [
 		no: '12',
 		img_src: GoodsImg,
 		goods_price: '12.00',
-		goods_sales: 50,
+		goods_sales: 258,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -127,7 +128,7 @@ var msg = [
 		no: '13',
 		img_src: GoodsImg,
 		goods_price: '13.00',
-		goods_sales: 50,
+		goods_sales: 351,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -136,7 +137,7 @@ var msg = [
 		no: '14',
 		img_src: GoodsImg,
 		goods_price: '14.00',
-		goods_sales: 50,
+		goods_sales: 658,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -145,7 +146,7 @@ var msg = [
 		no: '15',
 		img_src: GoodsImg,
 		goods_price: '15.00',
-		goods_sales: 50,
+		goods_sales: 156,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -154,7 +155,7 @@ var msg = [
 		no: '16',
 		img_src: GoodsImg,
 		goods_price: '16.00',
-		goods_sales: 50,
+		goods_sales: 1,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -163,7 +164,7 @@ var msg = [
 		no: '17',
 		img_src: GoodsImg,
 		goods_price: '17.00',
-		goods_sales: 50,
+		goods_sales: 0,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -172,7 +173,7 @@ var msg = [
 		no: '18',
 		img_src: GoodsImg,
 		goods_price: '18.00',
-		goods_sales: 50,
+		goods_sales: 9654,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	},
@@ -181,7 +182,7 @@ var msg = [
 		no: '19',
 		img_src: GoodsImg,
 		goods_price: '19.00',
-		goods_sales: 50,
+		goods_sales: 125,
 		goods_title: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
 		goods_location: '浙江杭州'
 	}
@@ -194,14 +195,59 @@ export default class HomePageGoodsList extends Component {
 		super(props);
 		this.state = {
 			pageSize: PAGESIZE,
-			goodsIndex: 0
+			goodsIndex: 0,
+			data: msg,
+			values: [],
+			type: 0
 		};
 	}
-
+	componentWillMount () {
+		events.on('changeGoods', this.changeGoods)
+		events.on('changeSort', this.changeSort)
+	}
+	changeGoods = (values) => {
+		const cloneVal = JSON.parse(JSON.stringify(values))
+		this.setState({values: cloneVal})
+	}
+	changeSort = (type) => {
+		this.setState({type})
+	}
+	resetData = (values, type) => {
+		let data = JSON.parse(JSON.stringify(msg))
+		switch (type) {
+			case 0: data = msg; break;
+			case 1: data = data.sort((pre, cur) => cur.goods_sales - pre.goods_sales); break;
+			case 3: data = data.sort((pre, cur) => (+cur.goods_price) - (+pre.goods_price)); break;
+			case 2: data = data.sort((pre, cur) => (+pre.goods_price) - (+cur.goods_price)); break;
+			default: data = msg; break;
+		}
+		function dataSearch (data_, values, length) {
+			length -= 1;
+			if (!data_ || data_.length === 0) {
+				return []
+			}
+			if (length >= 0) {
+				const searchKey = values.pop()
+				return dataSearch(data_.filter(e => {
+					if (e.goods_title.indexOf(searchKey) >= 0) {
+						return true
+					} else {
+						return false
+					}
+				}),values, length)
+			} else {
+				return data_
+			}
+		}
+		if (values.length !== 0) {
+			data = dataSearch(data, values, values.length)
+		}
+		return this.MapItem(data)
+	}
 	// getSortFun = (order, sortBy) => {     var ordAlpah = (order === 'asc')  ? '>'
 	//         : '<';     var sortFun = new Function('a', 'b', 'return a.' + sortBy
 	// + ordAlpah + 'b.' + sortBy + '?1:-1');     return sortFun; } 只遍历小于等于8个 遍历函数
-	MapItem = () => {
+	MapItem = (msg) => {
 		var flag = 0;
 		var index = this.state.goodsIndex;
 		var length = this.state.pageSize;
@@ -236,6 +282,7 @@ export default class HomePageGoodsList extends Component {
 	};
 
 	handleSizeChange = (current, size) => {
+		let msg = this.state.data
 		this.setState({ pageSize: size });
 		//当前页数与更改后总页数比较
 		var oldPage = current;
@@ -253,9 +300,12 @@ export default class HomePageGoodsList extends Component {
 	};
 
 	render() {
+		let msg = this.state.data
+		const {values, type} = this.state
+		const cloneVal = JSON.parse(JSON.stringify(values))
 		return (
 			<div className="goods-row">
-				<div className="goods-list">{this.MapItem()}</div>
+				<div className="goods-list">{this.resetData(cloneVal, type)}</div>
 				<div className="float" />
 				<Pagination
 					className="page-row"

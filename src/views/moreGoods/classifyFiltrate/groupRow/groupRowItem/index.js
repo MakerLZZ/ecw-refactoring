@@ -12,7 +12,7 @@ export default class GroupRowItem extends Component {
 			<div
 				className="item span-a"
 				onClick={() =>
-					this.props.handleConditionClick(this.props.classifyName + this.props.text, this.props.groupRowId)}
+					this.props.handleConditionClick(this.props.classifyName + this.props.text, this.props.groupRowId, this.props.text)}
 			>
 				<span className="text">{this.props.text}</span>
 				{this.props.children}
