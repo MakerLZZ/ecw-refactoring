@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import './index.less';
 import { Pagination } from 'antd';
 import GoodsItem from './goods';
-import GoodsImg from '@/assets/images/cart/goods_img.png';
 import events from '@/libs/events';
 import Http from '@/http';
 
 const PAGESIZE = 16;
-let total = 0
+let total = 0;
 export default class HomePageGoodsList extends Component {
 	constructor(props) {
 		super(props);
@@ -17,7 +16,7 @@ export default class HomePageGoodsList extends Component {
 			goodsIndex: 0,
 			data: [],
 			values: [],
-			type: 0,
+			type: 0
 		};
 	}
 
@@ -27,7 +26,7 @@ export default class HomePageGoodsList extends Component {
 				data: res.data.data,
 				total: res.data.data.length
 			});
-			total = res.data.data.length
+			total = res.data.data.length;
 		});
 	}
 
@@ -72,7 +71,7 @@ export default class HomePageGoodsList extends Component {
 		if (values.length !== 0) {
 			data = this.dataSearch(data, values, values.length);
 		}
-		total = data.length
+		total = data.length;
 		return this.MapItem(data);
 	};
 
@@ -157,7 +156,7 @@ export default class HomePageGoodsList extends Component {
 	};
 
 	render() {
-		let msg = this.state.data;
+		// let msg = this.state.data;
 		const { values, type } = this.state;
 		const cloneVal = JSON.parse(JSON.stringify(values));
 		return (
