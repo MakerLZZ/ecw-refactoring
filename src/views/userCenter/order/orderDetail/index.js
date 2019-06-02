@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Button } from 'antd';
+import { Icon, Button, message } from 'antd';
 import moment from 'moment';
 import CountDown from '@/components/countDown';
 import './index.less';
@@ -17,10 +17,10 @@ export default class OrderDetail extends Component {
 		this.setState({ orderInfo: orderInfo_ });
 	}
 	payOrder = () => {
-		alert('支付订单');
+		message.info('支付订单');
 	};
 	cancleOrder = () => {
-		alert('取消订单');
+		message.info('取消订单');
 	};
 	render() {
 		const { orderInfo } = this.state;
