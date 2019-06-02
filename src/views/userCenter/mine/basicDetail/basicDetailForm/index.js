@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import './index.less';
 import { Form, Input, Radio, Select, Button } from 'antd';
+import PropTypes from 'prop-types';
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 const Option = Select.Option;
 
 class BasicDetailForm extends Component {
+	static propTypes = {
+		userDetail: PropTypes.object,
+		modifyUserDetail: PropTypes.func
+	};
+
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				// var userNameInput = values.userName;
-				// var passwordInput = values.password;
-				// if (userNameInput === userName && passwordInput === password) {
-				//     message.success('欢迎来到吃货世界！');
-				//     this.props.hideModal();
-				//     //window.location.href='/';
-				//     this.props.login();
-				// }else if(userNameInput !==userName){
-				//     message.error('没有找到此账号，请核实后再试');
-				// }else if(userNameInput === userName&&passwordInput!==password ){
-				//     message.error('密码输错了哟，亲！');
-				// }
+				this.props.modifyUserDetail(values);
 			}
 		});
 	};
@@ -67,42 +62,48 @@ class BasicDetailForm extends Component {
 		return (
 			<Form onSubmit={this.handleSubmit}>
 				<FormItem {...formItemLayout} label="真实姓名" hasFeedback>
-					{getFieldDecorator('realName', {
-						rules: [
-							{
-								pattern: '^[\u4E00-\u9FA5]+$',
-								message: '只能输入汉字'
-							},
-							{
-								min: 2,
-								message: '请输入长度大于2小于6的汉字'
-							},
-							{
-								max: 6,
-								message: '请输入长度大于2小于6的汉字'
-							}
-						]
-					})(<Input type="text" />)}
+					{getFieldDecorator(
+						'name',
+						{ initialValue: this.props.name },
+						{
+							rules: [
+								{
+									pattern: '^[\u4E00-\u9FA5]+$',
+									message: '只能输入汉字'
+								},
+								{
+									min: 6,
+									message: '请输入长度大于6小于12的汉字'
+								},
+								{
+									max: 12,
+									message: '请输入长度大于6小于12的汉字'
+								}
+							]
+						}
+					)(<Input type="text" />)}
 				</FormItem>
 				<FormItem {...formItemLayout} label="性别">
-					{getFieldDecorator('sex', {
-						rules: [
-							{
-								required: true,
-								message: '至少选择一种性别'
-							}
-						]
-					})(
+					{getFieldDecorator(
+						'sex',
+						{ initialValue: this.props.sex },
+						{
+							rules: [
+								{
+									required: true,
+									message: '至少选择一种性别'
+								}
+							]
+						}
+					)(
 						<RadioGroup>
-							<Radio value="男">男</Radio>
-							<Radio value="女">女</Radio>
+							<Radio value="1">男</Radio>
+							<Radio value="2">女</Radio>
 						</RadioGroup>
 					)}
 				</FormItem>
 				<FormItem {...formItemColatLayout} label="星座" hasFeedback>
-					{getFieldDecorator('constellation', {
-						rules: []
-					})(
+					{getFieldDecorator('constellation', { initialValue: this.props.constellation })(
 						<Select placeholder="请选择一种星座">
 							<Option value="1">摩羯座</Option>
 							<Option value="2">水瓶座</Option>

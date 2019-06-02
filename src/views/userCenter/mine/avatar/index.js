@@ -27,10 +27,9 @@ export default class Avatar extends Component {
 		// });
 
 		this.getBase64(fileList[0], (preAvatar) => this.props.modifyAvatar(preAvatar));
-		message.success('保存成功！');
 		this.props.handleClick(0);
 
-		this.setState({ uploading: false });
+		// this.setState({ uploading: false });
 
 		// You can use any AJAX library you like
 		// reqwest({

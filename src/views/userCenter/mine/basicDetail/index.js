@@ -6,7 +6,8 @@ import BasicDetailForm from './basicDetailForm';
 export default class BasicDetail extends Component {
 	static propsTypes = {
 		handleClick: PropTypes.func,
-		userDeatil: PropTypes.object
+		userDeatil: PropTypes.object,
+		modifyUserDetail: PropTypes.func
 	};
 
 	state = {
@@ -58,6 +59,7 @@ export default class BasicDetail extends Component {
 						name={this.props.userDeatil.name}
 						sex={this.props.userDeatil.sex}
 						constellation={this.props.userDeatil.constellation}
+						modifyUserDetail={this.props.modifyUserDetail}
 					/>
 				</div>
 			</div>

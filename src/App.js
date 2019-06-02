@@ -58,17 +58,27 @@ export default class App extends Component {
 	}
 
 	logout = () => {
-		message.success('注销成功！');
 		Cookie.remove('userDetail');
 		this.setState({
 			loginSuccess: false
 		});
+		message.success('注销成功！');
 	};
+
+	modifyUserDetail(newUser) {
+		let userDetail = this.state.userDetail;
+		userDetail.name = newUser.name;
+		userDetail.sex = newUser.sex;
+		userDetail.constellation = newUser.constellation;
+		this.setState({ userDetail: userDetail });
+		message.success('保存成功！');
+	}
 
 	modifyAvatar(avatar) {
 		let userDetail = this.state.userDetail;
 		userDetail.avatar = avatar;
 		this.setState({ userDetail: userDetail });
+		message.success('保存成功！');
 	}
 
 	render() {
@@ -129,6 +139,7 @@ export default class App extends Component {
 										render={() => (
 											<Mine
 												userDetail={this.state.userDetail}
+												modifyUserDetail={(e) => this.modifyUserDetail(e)}
 												modifyAvatar={(e) => this.modifyAvatar(e)}
 											/>
 										)}
