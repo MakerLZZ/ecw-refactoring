@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon } from 'antd';
+import events from '../../../tool/events'
 import './index.less';
 
 export default class SortRow extends Component {
@@ -33,6 +34,7 @@ export default class SortRow extends Component {
 			price: '价格',
 			sales: '销量'
 		});
+		events.emit('changeSort', 0)
 	};
 
 	handleSalesClick = () => {
@@ -44,6 +46,7 @@ export default class SortRow extends Component {
 			price: '价格',
 			sales: '销量从高到低'
 		});
+		events.emit('changeSort', 1)
 	};
 
 	handleUpClick = () => {
@@ -55,6 +58,7 @@ export default class SortRow extends Component {
 			price: '价格从低到高',
 			sales: '销量'
 		});
+		events.emit('changeSort', 2)
 	};
 
 	handleDownClick = () => {
@@ -66,6 +70,7 @@ export default class SortRow extends Component {
 			price: '价格从高到低',
 			sales: '销量'
 		});
+		events.emit('changeSort', 3)
 	};
 
 	render() {

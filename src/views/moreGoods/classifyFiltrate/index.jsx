@@ -3,6 +3,7 @@ import { Icon } from 'antd';
 import './index.less';
 import GroupRow from './groupRow';
 import GroupTag from './groupTag';
+import events from '../../../tool/events'
 
 const SHOWTEXT = '显示筛选';
 const CLOSETEXT = '收起筛选';
@@ -146,7 +147,8 @@ export default class ClassifyFiltrate extends Component {
 		groupsBox: 'block',
 		icon: 'up',
 		groupRowClassName: 'group-row',
-		tags: []
+		tags: [],
+		valueArr: []
 	};
 
 	handleShowClick = () => {
@@ -158,15 +160,18 @@ export default class ClassifyFiltrate extends Component {
 		}
 	};
 
-	handleConditionClick = (text, id) => {
+	handleConditionClick = (text, id, val) => {
 		//孙子组件 点击事件返回至祖父组件方法体中 父组件某个元素隐藏
 		var groupRow = document.getElementById(id);
 		groupRow.style.display = 'none';
 
 		var tagArr = this.state.tags;
+		var valueArr = this.state.valueArr;
 		var tag = text;
 		tagArr.push(tag);
-		this.setState({ tags: tagArr });
+		valueArr.push(val)
+		events.emit('changeGoods', valueArr)
+		this.setState({ tags: tagArr, valueArr});
 	};
 
 	mapTags = () => {
@@ -184,7 +189,7 @@ export default class ClassifyFiltrate extends Component {
 					classifyName={v.classifyName}
 					id={v.id}
 					key={index}
-					handleConditionClick={(text, id) => this.handleConditionClick(text, id)}
+					handleConditionClick={(text, id, val) => this.handleConditionClick(text, id, val)}
 					className={this.state.groupRowClassName}
 				/>
 			);
