@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+import { LocaleProvider } from 'antd';
 
-import { Provider } from 'react-redux';
-import store from './store';
+// import { Provider } from 'react-redux';
+// import store from './store';
 
 ReactDOM.render(
-	<Provider store={store}>
+	<LocaleProvider locale={zhCN}>
+		{/* <Provider store={store}> */}
 		<App />
-	</Provider>,
+		{/* </Provider> */}
+	</LocaleProvider>,
 	document.getElementById('root')
 );
 
