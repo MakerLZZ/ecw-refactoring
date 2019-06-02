@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Button } from 'antd';
 import moment from 'moment';
-import CountDown from '@/libs/countDown';
+import CountDown from '@/components/countDown';
 import './index.less';
 
 export default class OrderDetail extends Component {
@@ -12,7 +12,7 @@ export default class OrderDetail extends Component {
 		const orderInfo_ = {
 			address: '阿卡洁白的拉升的侃大山达拉斯可能打开咖喱开始的拿手的内裤奥斯卡了烦恼沙口路法拉盛开发来看阿卡丽',
 			id: '4515133232515155',
-			createTime: '2019-5-24 15:22:11'
+			createTime: '2019-5-31 15:22:11'
 		};
 		this.setState({ orderInfo: orderInfo_ });
 	}
