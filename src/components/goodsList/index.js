@@ -11,7 +11,6 @@ export default class HomePageGoodsList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			total: 0,
 			pageSize: PAGESIZE,
 			goodsIndex: 0,
 			data: [],
@@ -23,8 +22,7 @@ export default class HomePageGoodsList extends Component {
 	componentWillMount() {
 		Http.get('/getGoodsList').then((res) => {
 			this.setState({
-				data: res.data.data,
-				total: res.data.data.length
+				data: res.data.data
 			});
 			total = res.data.data.length;
 		});
