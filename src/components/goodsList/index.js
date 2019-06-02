@@ -3,7 +3,7 @@ import './index.less';
 import { Pagination } from 'antd';
 import GoodsItem from './goods';
 import GoodsImg from '../../assets/images/home/goods_img.png';
-import events from '../../tool/events'
+import events from '@/libs/events'
 
 var msg = [
 	{

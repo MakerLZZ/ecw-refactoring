@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Icon } from 'antd';
-import events from '../../../tool/events'
+import events from '@/libs/events'
 import './index.less';
 
 export default class SortRow extends Component {

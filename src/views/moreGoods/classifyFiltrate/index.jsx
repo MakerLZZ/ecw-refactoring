@@ -3,7 +3,7 @@ import { Icon } from 'antd';
 import './index.less';
 import GroupRow from './groupRow';
 import GroupTag from './groupTag';
-import events from '../../../tool/events'
+import events from '@/libs/events'
 
 const SHOWTEXT = '显示筛选';
 const CLOSETEXT = '收起筛选';
