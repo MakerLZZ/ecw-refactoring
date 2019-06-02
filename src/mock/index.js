@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+import GoodsImg from '@/assets/images/cart/goods_img.png';
 
 const userDetail = {
 	code: 0,
@@ -12,6 +13,23 @@ const userDetail = {
 	}
 };
 
+const goodsList = {
+	code: 0,
+	msg: '成功',
+	'data|17-30': [
+		{
+			'key|+1': 0,
+			'no|+1': 0,
+			img_src: GoodsImg,
+			'goods_price|1-1000.1-2': 1,
+			'goods_sales|1-10000': 2,
+			'goods_title|1': [ '【天猫超市】盼盼豆腐干', '原味' ],
+			goods_location: '@county(true)'
+		}
+	]
+};
+
 Mock.mock(/\/getUserDetail/, userDetail);
+Mock.mock(/\/getGoodsList/, goodsList);
 
 export default Mock;
