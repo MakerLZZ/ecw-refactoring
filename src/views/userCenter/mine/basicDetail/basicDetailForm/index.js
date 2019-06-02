@@ -41,24 +41,6 @@ class BasicDetailForm extends Component {
 				}
 			}
 		};
-		const formItemColatLayout = {
-			labelCol: {
-				xs: {
-					span: 24
-				},
-				sm: {
-					span: 2
-				}
-			},
-			wrapperCol: {
-				xs: {
-					span: 24
-				},
-				sm: {
-					span: 10
-				}
-			}
-		};
 		return (
 			<Form onSubmit={this.handleSubmit}>
 				<FormItem {...formItemLayout} label="真实姓名" hasFeedback>
@@ -102,7 +84,7 @@ class BasicDetailForm extends Component {
 						</RadioGroup>
 					)}
 				</FormItem>
-				<FormItem {...formItemColatLayout} label="星座" hasFeedback>
+				<FormItem {...formItemLayout} label="星座" hasFeedback>
 					{getFieldDecorator('constellation', { initialValue: this.props.constellation })(
 						<Select placeholder="请选择一种星座">
 							<Option value="1">摩羯座</Option>
