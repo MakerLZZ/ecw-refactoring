@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import { Input } from 'antd';
 import { Link } from 'react-router-dom';
-// import logo from '../../assets/images/nav/logo.png';
-import title from '@/assets/images/nav/title.png';
+import logo from '@/assets/images/nav/logo110x55.png';
 
 const Search = Input.Search;
 export default class SearchRow extends Component {
@@ -13,8 +12,7 @@ export default class SearchRow extends Component {
 				<div className="search-box">
 					<Link to="/">
 						<div className="logo">
-							{/* <img src={logo} alt='' /> */}
-							<img src={title} alt="" />
+							<img src={logo} alt="" />
 						</div>
 					</Link>
 					<div className="search-input">
