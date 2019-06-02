@@ -76,7 +76,7 @@ export default class App extends Component {
 								<VisitorNav
 									ref={this.setTopMenuVisitor.bind(this)}
 									className={this.state.loginSuccess ? 'visitor-nav-hidden' : 'visitor-nav'}
-									login={() => this.login()}
+									login={(data) => this.login(data)}
 								/>
 								<UserNav
 									className={this.state.loginSuccess ? 'user-nav' : 'user-nav-hidden'}
@@ -101,7 +101,7 @@ export default class App extends Component {
 											/>
 										)}
 									/>
-									<Route exact path="/moreGoods" component={MoreGoods} />
+									<Route exact path="/more_goods" component={MoreGoods} />
 									<Route path="/orderDetail" render={() => <OrderDetail />} />
 									<Route
 										exact
