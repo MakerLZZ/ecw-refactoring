@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './index.less';
 import PropTypes from 'prop-types';
-import { message } from 'antd';
-
+import TitleItem from './titleItem';
 import BasicDetail from './basicDetail';
 import Avatar from './avatar';
 import Address from './address';
-
-import TitleItem from './titleItem';
 
 const titles = [
 	{
@@ -32,16 +29,12 @@ const titles = [
 
 export default class Mine extends Component {
 	static propsTypes = {
-		perCenPageModel: PropTypes.any
+		userDeatil: PropTypes.object
 	};
 
 	state = {
 		content: 0
 	};
-
-	componentWillMount() {
-		this.props.perCenPageModel ? this.props.perCenPageModel.liActive('mine') : message.info('发生了未知的错误！');
-	}
 
 	handleClick(e) {
 		titles.forEach((v, i) => {
@@ -70,13 +63,11 @@ export default class Mine extends Component {
 	};
 
 	render() {
-		const firstContent = <BasicDetail />;
-
-		const secondContent = <Avatar />;
-
-		const thirdContent = <Address />;
-
-		const components = [ firstContent, secondContent, thirdContent ];
+		let components = [
+			<BasicDetail userDeatil={this.props.userDetail} handleClick={(e) => this.handleClick(e)} />,
+			<Avatar />,
+			<Address />
+		];
 
 		return (
 			<div className="mine-page-model">

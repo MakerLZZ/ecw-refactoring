@@ -10,14 +10,19 @@ const SubMenu = Menu.SubMenu;
 const cart_num = '29';
 
 export default class UserNav extends Component {
+	static propTypes = {
+		className: PropTypes.string,
+		logout: PropTypes.func,
+		userDetail: PropTypes.object
+	};
+
 	state = {
 		current: 'mail'
 	};
 
-	static propTypes = {
-		className: PropTypes.string,
-		logout: PropTypes.func
-	};
+	componentDidMount() {
+		console.log(this.props.userDetail);
+	}
 
 	handleClick = (e) => {
 		this.setState({ current: e.key });
@@ -31,11 +36,16 @@ export default class UserNav extends Component {
 						<SubMenu
 							title={
 								<span>
-									tb2308752_2013<Icon type="down" />
+									{this.props.userDetail.userName}
+									<Icon type="down" />
 								</span>
 							}
 						>
-							<Avatar logout={this.props.logout} />
+							<Avatar
+								avatar={this.props.userDetail.avatar}
+								userName={this.props.userDetail.userName}
+								logout={this.props.logout}
+							/>
 						</SubMenu>
 					</Menu>
 					<Menu onClick={this.handleClick} selectedKeys={[ this.state.current ]} mode="horizontal">
@@ -47,8 +57,7 @@ export default class UserNav extends Component {
 							key="cart"
 							title={
 								<span>
-									{' '}
-									<Icon type="shopping-cart" />购物车 {cart_num} <Icon type="down" />{' '}
+									<Icon type="shopping-cart" />购物车 {cart_num} <Icon type="down" />
 								</span>
 							}
 						>

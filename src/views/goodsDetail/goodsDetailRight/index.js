@@ -5,12 +5,12 @@ import './animate.css';
 import { Link } from 'react-router-dom';
 import GoodsDetailImg from './goodsDetailImg';
 
-import bottom_img_1 from '../../../assets/images/goodsDetail/indent.png';
-import bottom_img_2 from '../../../assets/images/goodsDetail/seven.png';
-import bottom_img_3 from '../../../assets/images/goodsDetail/safety.png';
-import bottom_img_4 from '../../../assets/images/goodsDetail/antd.png';
-import bottom_img_5 from '../../../assets/images/goodsDetail/card.png';
-import bottom_img_6 from '../../../assets/images/goodsDetail/add.png';
+import bottom_img_1 from '@/assets/images/goodsDetail/indent.png';
+import bottom_img_2 from '@/assets/images/goodsDetail/seven.png';
+import bottom_img_3 from '@/assets/images/goodsDetail/safety.png';
+import bottom_img_4 from '@/assets/images/goodsDetail/antd.png';
+import bottom_img_5 from '@/assets/images/goodsDetail/card.png';
+import bottom_img_6 from '@/assets/images/goodsDetail/add.png';
 import PropTypes from 'prop-types';
 var msg_1 = [
 	{

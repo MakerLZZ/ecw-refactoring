@@ -4,17 +4,19 @@ import TopLogin from './topLogin';
 import TopLogout from './topLogout';
 import { Carousel } from 'antd';
 import './index.less';
-import ad from '../../../assets/images/home/ad.png';
-import TopGoods from '../../../assets/images/home/top_goods.png';
+import ad from '@/assets/images/home/ad.png';
+import TopGoods from '@/assets/images/home/top_goods.png';
 // import Ad_Img_1 from './home_page_img/carousel_ad_1.png'
-import Ad_Img_2 from '../../../assets/images/home/carousel_ad_2.png';
-import Ad_Img_3 from '../../../assets/images/home/carousel_ad_3.png';
+import Ad_Img_2 from '@/assets/images/home/carousel_ad_2.png';
+import Ad_Img_3 from '@/assets/images/home/carousel_ad_3.png';
 
 import PropTypes from 'prop-types';
 export default class PageTop extends Component {
 	static propsTypes = {
 		loginSuccess: PropTypes.bool,
-		topMenuVisitor: PropTypes.any
+		topMenuVisitor: PropTypes.any,
+		avatar: PropTypes.avatar,
+		userName: PropTypes.string
 	};
 
 	render() {
@@ -40,7 +42,11 @@ export default class PageTop extends Component {
 					<img src={ad} alt="" />
 				</div>
 				<div className="home-page-top-right">
-					{this.props.loginSuccess ? <TopLogin /> : <TopLogout topMenuVisitor={this.props.topMenuVisitor} />}
+					{this.props.loginSuccess ? (
+						<TopLogin avatar={this.props.avatar} userName={this.props.userName} />
+					) : (
+						<TopLogout topMenuVisitor={this.props.topMenuVisitor} />
+					)}
 					<div className="goods-max">
 						<div className="goods-max-title">
 							<span>热门推荐</span>

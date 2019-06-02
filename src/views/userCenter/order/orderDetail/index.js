@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Button } from 'antd';
 import moment from 'moment';
-import CountDown from '../../../../components/countDown';
+import CountDown from '@/libs/countDown';
 import './index.less';
 
 export default class OrderDetail extends Component {

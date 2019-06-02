@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BackTop } from 'antd';
 import './index.less';
-import BackTopImg from '../../../assets/images/home/back_top.png';
+import BackTopImg from '@/assets/images/home/back_top.png';
 
 export default class BackTop_ extends Component {
 	render() {

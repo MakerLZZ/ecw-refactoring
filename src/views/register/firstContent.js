@@ -6,8 +6,6 @@ import './content.css';
 
 const FormItem = Form.Item;
 
-const accounts = [ '123123', '321123', '213123' ];
-
 class FirstContent extends Component {
 	static propTypes = {
 		getAccount: PropTypes.func
@@ -15,10 +13,11 @@ class FirstContent extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		let accounts = JSON.parse(localStorage.getItem('accounts'));
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
 				var account = values.account;
-				if (accounts.indexOf(account) > -1) {
+				if (accounts && accounts.findIndex((v) => v.user === account) > -1) {
 					message.error('账号已存在！');
 				} else {
 					message.success('账号设置成功！');
@@ -77,7 +76,7 @@ class FirstContent extends Component {
 					})(<Input />)}
 				</FormItem>
 				<FormItem>
-					<Button type="primary" htmlType="submit" className="">
+					<Button type="primary" htmlType="submit">
 						下一步
 					</Button>
 				</FormItem>

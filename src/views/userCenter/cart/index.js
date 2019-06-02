@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './index.less';
-import PropTypes from 'prop-types';
-import { Checkbox, message } from 'antd';
+import { Checkbox } from 'antd';
 import CartItem from './cartItem';
-import GoodsImg from '../../../assets/images/cart/goods_img.png';
+import GoodsImg from '@/assets/images/cart/goods_img.png';
 import { Link } from 'react-router-dom';
 // import $ from 'jquery'
 
@@ -47,10 +46,6 @@ const cartAll = [
 ];
 
 export default class CartPageModel extends Component {
-	static propsTypes = {
-		perCenPageModel: PropTypes.any
-	};
-
 	state = {
 		allChecked: false,
 		spanIconClassName: 'right-span-icon-hidden',
@@ -60,10 +55,6 @@ export default class CartPageModel extends Component {
 		selectedNum: 0,
 		tatalPrice: 0.0
 	};
-
-	componentWillMount() {
-		this.props.perCenPageModel ? this.props.perCenPageModel.liActive('cart') : message.info('发生了未知的错误！');
-	}
 
 	//全选
 	onChange(e) {

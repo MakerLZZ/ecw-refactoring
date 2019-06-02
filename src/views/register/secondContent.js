@@ -8,6 +8,7 @@ const FormItem = Form.Item;
 
 class SecondContent extends Component {
 	static propTypes = {
+		account: PropTypes.string,
 		getPassword: PropTypes.func
 	};
 
@@ -20,6 +21,16 @@ class SecondContent extends Component {
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
 				var password = values.password;
+				let accounts = [
+					{
+						user: this.props.account,
+						pass: password
+					}
+				];
+				if (localStorage.getItem('accounts')) {
+					accounts = [ ...accounts, ...JSON.parse(localStorage.getItem('accounts')) ];
+				}
+				localStorage.setItem('accounts', JSON.stringify(accounts));
 				message.success('密码设置成功！');
 				this.props.getPassword(password);
 			}
@@ -36,7 +47,7 @@ class SecondContent extends Component {
 	checkPassword = (rule, value, callback) => {
 		const form = this.props.form;
 		if (value && value !== form.getFieldValue('password')) {
-			callback('你输入的两个密码是不一致的!');
+			callback('请输入不一致的两个密码!');
 		} else {
 			callback();
 		}
