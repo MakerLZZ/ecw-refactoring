@@ -20,10 +20,6 @@ export default class UserNav extends Component {
 		current: 'mail'
 	};
 
-	componentDidMount() {
-		console.log(this.props.userDetail);
-	}
-
 	handleClick = (e) => {
 		this.setState({ current: e.key });
 	};

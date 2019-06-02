@@ -3,7 +3,7 @@ import './index.less';
 import PropTypes from 'prop-types';
 import GoodsDetailLeft from './goodsDetailLeft';
 import GoodsDetailRight from './goodsDetailRight';
-import Test from './test';
+// import Test from './test';
 
 export default class GoodsDetailPageModel extends Component {
 	static propsTypes = {

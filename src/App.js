@@ -55,7 +55,6 @@ export default class App extends Component {
 			userDetail: data,
 			loginSuccess: true
 		});
-		console.log(this.state.userDetail);
 	}
 
 	logout = () => {
