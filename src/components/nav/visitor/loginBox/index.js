@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Form, Icon, Input, Button, message } from 'antd';
 import Http from '@/http';
 import Cookies from 'js-cookie';
+import { withRouter } from 'react-router-dom';
 
 const FormItem = Form.Item;
 
@@ -29,6 +30,7 @@ class LoginBox extends Component {
 							Cookies.set('userDetail', res.data.data, { expires: 1 });
 							message.success('欢迎来到吃货世界！');
 							this.props.hideModal();
+							this.props.history.push('/');
 							this.props.login(res.data.data);
 						});
 					} else {
@@ -92,4 +94,4 @@ class LoginBox extends Component {
 }
 
 const WrappedHorizontalLoginForm = Form.create()(LoginBox);
-export default WrappedHorizontalLoginForm;
+export default withRouter(WrappedHorizontalLoginForm);
