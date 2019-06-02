@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 import MiniGoods from './goods';
-import avater from '@/assets/images/nav/tool.png';
+import avater from '@/assets/images/mine/avatar_2.png';
 import { Link } from 'react-router-dom';
 
 var msg = [

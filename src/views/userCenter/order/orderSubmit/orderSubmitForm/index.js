@@ -3,7 +3,7 @@ import './index.less';
 import { Form, Radio, Table, Button, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import AddressItem from './addressItem';
-import GoodsImg from '@/assets/images/order/goods_img.png';
+import GoodsImg from '@/assets/images/goods/goods_1.jpg';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 
