@@ -207,9 +207,9 @@ export default class CartPageModel extends Component {
 							全选
 						</span>
 					</div>
-					<div className="left">
+					{/* <div className="left">
 						<span className="delete-all span-a">删除</span>
-					</div>
+					</div> */}
 					<div className="right submit">
 						<Link to="/personal_center/cart" className={this.state.submitButtonClassName}>
 							结&nbsp;算
