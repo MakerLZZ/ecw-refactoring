@@ -40,7 +40,7 @@ const cartList = {
 			'key|+1': 0,
 			'no|+1': 0,
 			cartItemImgSrc: GoodsImg,
-			cartItemTitle: 'Lay’s/乐事薯片飘香麻辣锅味70g*6袋 休闲膨化吃货零食',
+			cartItemTitle: '@csentence(20, 30)', // 句子
 			'cartItemUnit|1-1000': 1,
 			'cartItemNum|1-50': 1,
 			'cartItemInventory|51-500': 1
@@ -59,7 +59,7 @@ const orderList = {
 			date: '@date("yyyy-MM-dd")',
 			no: /^[0-9]{12}$/, // 12数字
 			img_src: GoodsImg,
-			detail: '【天猫超市】黑人牙膏双重薄荷225g清新口气有效防蛀去牙渍去口臭',
+			detail: '@csentence(20, 30)', // 句子
 			'price|1-1000.2': 1,
 			'num|1-800': 1,
 			'condition|1-4': 1
