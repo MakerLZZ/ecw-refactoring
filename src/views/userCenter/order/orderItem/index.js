@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.less';
+import { Link } from 'react-router-dom';
 
 export default class OrderItem extends Component {
 	state = {
@@ -56,7 +57,9 @@ export default class OrderItem extends Component {
 							</div>
 						</li>
 						<li className="li-2 check-detail">
-							<span className="span-a">查看详情</span>
+							<Link to="/orderDetail">
+								<span className="span-a">查看详情</span>
+							</Link>
 						</li>
 					</ul>
 				</div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 import { Form, Radio, Table, Button, Modal } from 'antd';
+import { Link } from 'react-router-dom';
 import AddressItem from './addressItem';
 import GoodsImg from '@/assets/images/order/goods_img.png';
 const FormItem = Form.Item;
@@ -113,36 +114,21 @@ class OrderSubmitForm extends Component {
 			}
 		});
 	};
+
 	render() {
 		const { getFieldDecorator } = this.props.form;
-		const formItemLayout = {
-			labelCol: {
-				xs: {
-					span: 24
-				},
-				sm: {
-					span: 3
-				}
-			},
-			wrapperCol: {
-				xs: {
-					span: 24
-				},
-				sm: {
-					span: 10
-				}
-			}
-		};
 		return (
 			<Form>
-				<FormItem {...formItemLayout} label="">
+				<FormItem>
 					{getFieldDecorator('address-key', {
 						initialValue: 0,
 						exclusive: true
-					})(<RadioGroup onChange={this.radioOnChange}>{this.mapRadioTitle()}</RadioGroup>)}
+					})(<RadioGroup onChange={(e) => this.radioOnChange(e)}>{this.mapRadioTitle()}</RadioGroup>)}
 				</FormItem>
 				<div className="form-button">
-					<Button type="primary">使用新地址</Button>
+					<Link to="/personal_center/mine">
+						<Button type="primary">使用新地址</Button>
+					</Link>
 				</div>
 				<div className="verify-row">确认订单信息</div>
 				<div className="goods-table">
@@ -167,9 +153,11 @@ class OrderSubmitForm extends Component {
 				</div>
 				<div className="clear-float" />
 				<FormItem className="submit-button">
-					<Button type="primary" htmlType="submit" className="">
-						确认订单
-					</Button>
+					<Link to="/orderDetail">
+						<Button type="primary" htmlType="submit" className="">
+							确认订单
+						</Button>
+					</Link>
 				</FormItem>
 			</Form>
 		);
